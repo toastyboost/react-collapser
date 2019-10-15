@@ -8,6 +8,10 @@ Accordion
 
 isOpen = default stats of accordion
 
+Collapsible
+
+alwaysOpen = if all item closed
+
 ## Commands
 
 Start developing
@@ -20,3 +24,22 @@ Start developing
 
 `yarn build` -> `production` is true  
 `yarn dev` -> `production` is false
+
+## todo
+
+addOnChange
+add ally
+add easing option
+
+add onOpen, onClose, onOpening, onClosing
+backtrace by classes
+add hooks
+case without trigger
+
+add open all
+add close all
+
+add gifs
+add antd to style all
+
+add variable paragraphs
