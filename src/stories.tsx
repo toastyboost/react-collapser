@@ -1,7 +1,7 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
-import { Accordion, Trigger, Content, Collapsible } from "./index"
+import { Accordion, Trigger, Content, Collapsible } from "./ui"
 import { StyledAccordion, StyledTitle, StyledContent } from "./styled"
 
 // accordion	If true, Collapse renders as Accordion

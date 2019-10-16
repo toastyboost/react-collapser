@@ -4,7 +4,7 @@
   "useTabs": false,
   "tabWidth": 2,
   "bracketSpacing": true,
-  "singleQuote": true,
+  "singleQuote": false,
   "jsxBracketSameLine": false,
   "printWidth": 100
 }

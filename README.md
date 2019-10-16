@@ -43,3 +43,6 @@ add gifs
 add antd to style all
 
 add variable paragraphs
+in case of naming problems
+
+add aliases to rollup

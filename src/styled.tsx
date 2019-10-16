@@ -1,4 +1,5 @@
-import { Accordion, Trigger, Content } from "./index"
+import { Accordion, Trigger, Content } from "./ui"
+
 import styled from "styled-components"
 
 export const StyledAccordion = styled<any>(Accordion)`
