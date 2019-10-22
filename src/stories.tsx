@@ -129,39 +129,7 @@ storiesOf("Accordion", module).add("Independed accordions", () => {
 storiesOf("Collapsible", module).add("Defailt openned", () => {
   return (
     <StyledAccordionContainer>
-      <Collapsible isAnimated initialKey={1}>
-        <StyledAccordion>
-          <StyledTitle>Introducing JSX</StyledTitle>
-          <StyledContent>
-            This funny tag syntax is neither a string nor HTML. It is called JSX, and it is a syntax
-            extension to JavaScript. We recommend using it with React to describe what the UI should
-            look like. JSX may remind you of a template language, but it comes with the full power
-            of JavaScript.
-          </StyledContent>
-        </StyledAccordion>
-        <StyledAccordion>
-          <StyledTitle>Components and Props</StyledTitle>
-          <StyledContent>
-            Components let you split the UI into independent, reusable pieces, and think about each
-            piece in isolation. This page provides an introduction to the idea of components.
-          </StyledContent>
-        </StyledAccordion>
-        <StyledAccordion>
-          <StyledTitle>Handling Events</StyledTitle>
-          <StyledContent>
-            Handling events with React elements is very similar to handling events on DOM elements.
-            There are some syntactic differences:
-          </StyledContent>
-        </StyledAccordion>
-      </Collapsible>
-    </StyledAccordionContainer>
-  )
-})
-
-storiesOf("Collapsible", module).add("Dependeted accordions", () => {
-  return (
-    <StyledAccordionContainer>
-      <Collapsible isAnimated initialKey={0}>
+      <Collapsible isAnimated initialKey={2}>
         <StyledAccordion>
           <StyledTitle>Introducing JSX</StyledTitle>
           <StyledContent>
@@ -193,7 +161,7 @@ storiesOf("Collapsible", module).add("Dependeted accordions", () => {
 storiesOf("Collapsible", module).add("Always open", () => {
   return (
     <StyledAccordionContainer>
-      <Collapsible isAnimated initialKey={1} alwaysOpen>
+      <Collapsible isAnimated initialKey={0} alwaysOpen>
         <StyledAccordion>
           <StyledTitle>Introducing JSX</StyledTitle>
           <StyledContent>

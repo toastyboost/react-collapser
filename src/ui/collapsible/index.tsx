@@ -14,7 +14,7 @@ type CollapsibleProps = {
 export const CollapsibleContext = React.createContext<CollapsibleProps | {}>({})
 
 export const Collapsible: React.FC<CollapsibleProps> = (props) => {
-  const { className, children, initialKey = null, alwaysOpen = false } = props
+  const { className, children, initialKey = null, alwaysOpen = false, isAnimated } = props
 
   const [currentKey, toggleCurrent] = React.useState<any>(initialKey)
 
@@ -28,7 +28,8 @@ export const Collapsible: React.FC<CollapsibleProps> = (props) => {
         {React.Children.map(children, (child: any, index) => {
           return React.cloneElement(child, {
             index,
-            isOpen: isOpen(index)
+            isOpen: isOpen(index),
+            isAnimated
           })
         })}
       </CollapsibleContext.Provider>

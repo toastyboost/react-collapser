@@ -1,6 +1,5 @@
 import * as React from "react"
 
-import { createElement } from "../../lib"
 import { AccordionContainer } from "./styles"
 
 type AccordionProps = {
@@ -21,9 +20,8 @@ export const Accordion: React.FC<AccordionProps> = (props) => {
   const [insideOpen, openToogler] = React.useState<any>(isOpen)
 
   const handleToggle = (id: number | undefined) => {
-    console.log(currentKey, id)
     openToogler(currentKey === id)
-    toggleCurrent && toggleCurrent(id)
+    toggleCurrent && toggleCurrent(currentKey === id ? (alwaysOpen ? 0 : -1) : id)
   }
 
   React.useEffect(() => {
