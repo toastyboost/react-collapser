@@ -6,50 +6,42 @@ import { AccordionContainer } from "./styles"
 type AccordionProps = {
   className?: string
   isOpen?: boolean
-  animated?: boolean
-  toggleCallback?: () => number
-  activeKey?: number
+  isAnimated?: boolean
   index?: number
 }
+import { CollapsibleContext } from "../collapsible"
+
+export const AccordionContext = React.createContext<AccordionProps | {}>({})
 
 export const Accordion: React.FC<AccordionProps> = (props) => {
-  const {
-    children = {},
-    isOpen = false,
-    animated = false,
-    toggleCallback,
-    activeKey = 0,
-    index
-  } = props
+  const { className, children, isOpen = false, isAnimated = false, index } = props
 
-  const [isContentOpened, toogle] = React.useState(isOpen)
+  const { alwaysOpen, currentKey, toggleCurrent } = React.useContext<any>(CollapsibleContext)
 
-  const triggerData = {
-    name: "Trigger",
-    props: {
-      isOpen: isContentOpened,
-      onClick: () => {
-        toggleCallback && toggleCallback()
-        toogle(!isContentOpened)
-      }
-    }
+  const [insideOpen, openToogler] = React.useState<any>(isOpen)
+
+  const handleToggle = (id: number | undefined) => {
+    console.log(currentKey, id)
+    openToogler(currentKey === id)
+    toggleCurrent && toggleCurrent(id)
   }
 
-  const contentData = {
-    name: "Content",
-    props: {
-      isOpen: toggleCallback ? activeKey === index : isContentOpened,
-      animated
-    }
-  }
-
-  const titleChildren = createElement(children, triggerData)
-  const contentChildren = createElement(children, contentData)
+  React.useEffect(() => {
+    openToogler(isOpen)
+  }, [isOpen])
 
   return (
-    <AccordionContainer {...props}>
-      {titleChildren}
-      {contentChildren}
+    <AccordionContainer {...props} className={`${className} accordion`}>
+      <AccordionContext.Provider
+        value={{
+          handleToggle: () => handleToggle(index),
+          isOpen: insideOpen,
+          isAnimated,
+          index
+        }}
+      >
+        {children}
+      </AccordionContext.Provider>
     </AccordionContainer>
   )
 }

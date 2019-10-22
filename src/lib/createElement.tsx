@@ -13,6 +13,7 @@ export const createElement = (childrens: React.ReactNode, data: CreateElementPro
   return React.Children.map(childrens, (child: any) => {
     const styledName = child.type.target && child.type.target.name
     const plainName = child.type && child.type.name
+
     return (
       (data.name === styledName || data.name === plainName) &&
       React.cloneElement(child, { ...data.props, ...child.props })

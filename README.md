@@ -29,11 +29,10 @@ Start developing
 
 addOnChange
 add ally
-add easing option
 
 add onOpen, onClose, onOpening, onClosing
-backtrace by classes
 add hooks
+
 case without trigger
 
 add open all
@@ -46,3 +45,5 @@ add variable paragraphs
 in case of naming problems
 
 add aliases to rollup
+
+// accordion If true, Collapse renders as Accordion

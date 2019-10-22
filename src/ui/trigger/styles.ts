@@ -1,3 +1,9 @@
 import styled from "styled-components"
 
-export const AccordionTrigger = styled.div<any>``
+type AccordionTriggerProps = {
+  isOpen?: boolean
+}
+
+export const AccordionTrigger = styled.div<AccordionTriggerProps>`
+  cursor: pointer;
+`

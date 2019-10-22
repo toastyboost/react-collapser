@@ -4,32 +4,34 @@ import { CollapsibleContainer } from "./styles"
 
 type CollapsibleProps = {
   initialKey?: number
-  children: React.ReactNode
+  isAnimated?: boolean
   alwaysOpen?: boolean
-  animated?: boolean
+  className?: string
+  animation?: string
+  children?: React.ReactNode
 }
 
-export const Collapsible: React.FC<CollapsibleProps> = (props) => {
-  const { initialKey = 0, alwaysOpen = false, children, animated = false } = props
-  const [activeKey, setKey] = React.useState(initialKey)
+export const CollapsibleContext = React.createContext<CollapsibleProps | {}>({})
 
-  const handleToggle = (key: any) => {
-    alwaysOpen && setKey(key === activeKey ? 0 : key)
-    !alwaysOpen && setKey(key === activeKey ? -1 : key)
+export const Collapsible: React.FC<CollapsibleProps> = (props) => {
+  const { className, children, initialKey = null, alwaysOpen = false } = props
+
+  const [currentKey, toggleCurrent] = React.useState<any>(initialKey)
+
+  const isOpen = (id: number) => {
+    return currentKey === id
   }
 
-  const ele = React.Children.map(children, (child: any, index: number) => {
-    return React.cloneElement(child, {
-      index,
-      activeKey,
-      animated,
-      toggleCallback: () => {
-        handleToggle(index)
-      }
-    })
-  })
-
-  React.useEffect(() => {}, [activeKey])
-
-  return <CollapsibleContainer>{ele}</CollapsibleContainer>
+  return (
+    <CollapsibleContainer className={`${className} collapsible`}>
+      <CollapsibleContext.Provider value={{ ...props, currentKey, toggleCurrent, alwaysOpen }}>
+        {React.Children.map(children, (child: any, index) => {
+          return React.cloneElement(child, {
+            index,
+            isOpen: isOpen(index)
+          })
+        })}
+      </CollapsibleContext.Provider>
+    </CollapsibleContainer>
+  )
 }

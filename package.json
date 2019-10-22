@@ -18,7 +18,7 @@
     "test": "jest --passWithNoTests",
     "prettier": "prettier --write",
     "lint": "tslint --project tsconfig.json --fix",
-    "story": "start-storybook"
+    "start": "start-storybook"
   },
   "lint-staged": {
     "*.(ts|tsx)": [
@@ -82,6 +82,7 @@
     "typescript": "^3.6.2"
   },
   "dependencies": {
+    "antd": "^3.24.0",
     "react-animate-height": "^2.0.16"
   }
 }
