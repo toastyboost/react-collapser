@@ -15,7 +15,9 @@ export const AccordionContext = React.createContext<AccordionProps | {}>({})
 export const Accordion: React.FC<AccordionProps> = (props) => {
   const { className, children, isOpen = false, isAnimated = false, index } = props
 
-  const { alwaysOpen, currentKey, toggleCurrent } = React.useContext<any>(CollapsibleContext)
+  const { alwaysOpen, currentKey, toggleCurrent, animation } = React.useContext<any>(
+    CollapsibleContext
+  )
 
   const [insideOpen, openToogler] = React.useState<any>(isOpen)
 
@@ -35,7 +37,8 @@ export const Accordion: React.FC<AccordionProps> = (props) => {
           handleToggle: () => handleToggle(index),
           isOpen: insideOpen,
           isAnimated,
-          index
+          index,
+          animation
         }}
       >
         {children}

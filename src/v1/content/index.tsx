@@ -7,7 +7,7 @@ export const Content: React.FC = (props: any) => {
   const ref = React.useRef<any>()
 
   const { className, children } = props
-  const { isOpen, isAnimated } = React.useContext<any>(AccordionContext)
+  const { isOpen, isAnimated, animation } = React.useContext<any>(AccordionContext)
 
   return (
     <AccordionContent
@@ -15,7 +15,8 @@ export const Content: React.FC = (props: any) => {
       ref={ref}
       isOpen={isOpen}
       isAnimated={isAnimated}
-      className={`${className} accordion-content ${isOpen && "isOpen"}  `}
+      animation={animation}
+      className={`${className} accordion-content ${isOpen && "isOpen"}`}
     >
       {children}
     </AccordionContent>
