@@ -17,7 +17,13 @@ export const Accordion: React.FC<AccordionProps> = (props): React.ReactElement =
     any
   >(CollapsibleContext)
 
-  const { className, children, isOpen = false, animated = animatedCollapse, index = 0 } = props
+  const {
+    className,
+    children,
+    isOpen = false,
+    animated = animatedCollapse ? animatedCollapse : false,
+    index = 0
+  } = props
 
   const [isAccordionOpen, toggleAccordion] = React.useState(isOpen)
 
@@ -37,9 +43,9 @@ export const Accordion: React.FC<AccordionProps> = (props): React.ReactElement =
   React.useEffect(() => {
     toggleAccordion(activeID === index)
   }, [activeID])
-  console.log("className", className)
+
   return (
-    <div {...props} className={`accordion ${className ? className : ""}`}>
+    <div {...props} className={`accordion${className ? " " + className : ""}`}>
       <AccordionContext.Provider value={accordionStore}>{children}</AccordionContext.Provider>
     </div>
   )

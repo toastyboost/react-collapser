@@ -33,6 +33,10 @@ export const Container = styled.div<any>`
     border-bottom: 0;
     border-radius: 3px;
 
+    &-nested {
+      margin-top: 12px;
+    }
+
     &-content {
       background-color: #fff;
       border-bottom: 1px solid #d9d9d9;
@@ -69,7 +73,7 @@ export const Container = styled.div<any>`
     border-radius: 3px;
     border: 1px solid #d9d9d9;
 
-    .accordion {
+    > .accordion {
       margin-top: -1px;
       margin-bottom: -1px;
       border-radius: 0;

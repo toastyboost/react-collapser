@@ -5,14 +5,16 @@ import { AccordionContext } from "../accordion"
 export const Trigger: React.FC<any> = (props) => {
   const { className } = props
 
-  const { isOpen, toggle, animated } = React.useContext<any>(AccordionContext)
+  const { isOpen, toggle, animated, index } = React.useContext<any>(AccordionContext)
 
   return (
     <div
       {...props}
-      className={`accordion-trigger ${isOpen && "isOpen"} ${className ? className : ""}`}
+      className={`accordion-trigger trigger-id-${index} ${isOpen ? "isOpen" : ""}${
+        className ? " " + className : ""
+      }`}
       onClick={toggle}
-      style={{ cursor: "pointer", transition: animated ? "0.3s" : "none" }}
+      style={{ cursor: "pointer", transition: animated ? "0.3s" : 0 }}
     />
   )
 }

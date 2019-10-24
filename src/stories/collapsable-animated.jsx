@@ -10,7 +10,7 @@ import { data } from "../ui/mock"
 storiesOf("Collapsible", module).add("Animated", () => {
   return (
     <Ui>
-      <Collapsible animated>
+      <Collapsible animated={true}>
         {data.map(({ title, content }, key) => (
           <Accordion key={key} index={key}>
             <Trigger>{title}</Trigger>

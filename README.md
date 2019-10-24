@@ -1,49 +1,30 @@
-## Get started
+## About
 
-This project is for developing NPM packages. Development proceed in Storybook.
+Simple accordion. Last React, SSR friendly.
 
-## props
+## Features
 
-Accordion
+Simple nesting
+No unnecessary tags inside of accordion or collapsible
 
-isOpen = default stats of accordion
+## Started
 
-Collapsible
+`yarn install && yarn start` - Develop project in Storybook
 
-alwaysOpen = if all item closed
+# Details
 
-## Commands
-
-Start developing
-
-`yarn install && yarn story`
-
-# Config details
-
-`yarn build` build components into CommonJS and ES6 Modules differnt builds
+Development going on Storybook, compiling with Rollup
 
 `yarn build` -> `production` is true  
 `yarn dev` -> `production` is false
 
-## todo
+## TODO
 
-addOnChange
-add ally
+✳️ add open all
+✳️ add close all
+✳️ multiple initials
 
-add onOpen, onClose, onOpening, onClosing
-add hooks
+✳️ add events (onChange, onOpen, onClose, onOpening, onClosing)
+✳️ add ally
 
-case without trigger
-
-add open all
-add close all
-
-add gifs
-add antd to style all
-
-add variable paragraphs
-in case of naming problems
-
-add aliases to rollup
-
-// accordion If true, Collapse renders as Accordion
+✳️ add aliases to rollup
