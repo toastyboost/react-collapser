@@ -5,12 +5,12 @@ import { AccordionContext } from "../accordion"
 export const Content: React.FC = (props: any) => {
   const { className, children } = props
 
-  const { isOpen, animated, index } = React.useContext<any>(AccordionContext)
+  const { isOpen, animated } = React.useContext<any>(AccordionContext)
 
   return (
     <div
       {...props}
-      className={`accordion-content content-id-${index} ${className ? " " + className : ""}${
+      className={`accordion-content content-id- ${className ? " " + className : ""}${
         isOpen ? "isOpen" : ""
       }`}
       style={{

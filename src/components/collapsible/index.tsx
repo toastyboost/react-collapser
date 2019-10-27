@@ -1,8 +1,10 @@
 import * as React from "react"
 
+import { getId } from "../../ui/libs"
+
 export interface CollapsibleProps {
   className?: string
-  isDependent?: boolean
+  collapsible?: boolean
   initial?: number
   alwaysOpen?: boolean
   animated?: boolean
@@ -10,13 +12,13 @@ export interface CollapsibleProps {
 
 export const CollapsibleContext = React.createContext({})
 
-export const Collapsible: React.FC<CollapsibleProps> = (props) => {
+export const Collapsible: React.FC<CollapsibleProps> = (props: any) => {
   const { className, children, initial = 0, alwaysOpen = false, animated = false } = props
 
   const [activeID, setActiveID] = React.useState(initial)
 
   const store = {
-    isDependent: true,
+    collapsible: true,
     activeID,
     toggleActiveID: setActiveID,
     alwaysOpen,
@@ -25,7 +27,13 @@ export const Collapsible: React.FC<CollapsibleProps> = (props) => {
 
   return (
     <div {...props} className={`collapsible ${className ? className : ""}`}>
-      <CollapsibleContext.Provider value={store}>{children}</CollapsibleContext.Provider>
+      <CollapsibleContext.Provider value={store}>
+        {React.Children.map(children, (child) => {
+          return typeof child.type === "function"
+            ? React.cloneElement(child, { className: "accordion-nested", index: getId() })
+            : child
+        })}
+      </CollapsibleContext.Provider>
     </div>
   )
 }

@@ -7,13 +7,13 @@ export interface AccordionProps {
   animated?: boolean
   defaultOpen?: boolean
   isOpen?: boolean
-  index?: number
+  index?: any
 }
 
 export const AccordionContext = React.createContext({})
 
 export const Accordion: React.FC<AccordionProps> = (props): React.ReactElement => {
-  const { isDependent, toggleActiveID, activeID, alwaysOpen, animatedCollapse } = React.useContext<
+  const { collapsible, toggleActiveID, activeID, alwaysOpen, animatedCollapse } = React.useContext<
     any
   >(CollapsibleContext)
 
@@ -22,7 +22,7 @@ export const Accordion: React.FC<AccordionProps> = (props): React.ReactElement =
     children,
     isOpen = false,
     animated = animatedCollapse ? animatedCollapse : false,
-    index = 0
+    index
   } = props
 
   const [isAccordionOpen, toggleAccordion] = React.useState(isOpen)
@@ -30,19 +30,19 @@ export const Accordion: React.FC<AccordionProps> = (props): React.ReactElement =
   const accordionStore = {
     isOpen: isAccordionOpen,
     toggle: () => {
-      if (isDependent) {
-        toggleActiveID(activeID === index ? (alwaysOpen ? 0 : -1) : index)
-      } else {
-        toggleAccordion(!isAccordionOpen)
-      }
+      // if (collapsible) {
+      //   toggleActiveID(activeID === index ? (alwaysOpen ? 0 : -1) : index)
+      // } else {
+      toggleAccordion(!isAccordionOpen)
+      // }
     },
-    index,
+
     animated
   }
-
-  React.useEffect(() => {
-    toggleAccordion(activeID === index)
-  }, [activeID])
+  console.log("props.index ", index)
+  // React.useEffect(() => {
+  //   collapsible && toggleAccordion(activeID === index)
+  // }, [activeID])
 
   return (
     <div {...props} className={`accordion${className ? " " + className : ""}`}>
