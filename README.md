@@ -1,30 +1,23 @@
 ## About
 
-Simple accordion. Last React, SSR friendly.
+Basic and ⚡ storybook starter with common features for your project.
+
+## Start
+
+`yarn install && yarn start` - start development on `http://localhost:7000`
 
 ## Features
 
-Simple nesting
-No unnecessary tags inside of accordion or collapsible
+🔹 addon-knobs  
+🔀 addon-actions  
+🔹 addon-console  
+🔸 addon-a11y  
+📄 addon-info
 
-## Started
+🔸Alias in config
 
-`yarn install && yarn start` - Develop project in Storybook
+# Other things to know
 
-# Details
+Typescript version in /typescript branch
 
-Development going on Storybook, compiling with Rollup
-
-`yarn build` -> `production` is true  
-`yarn dev` -> `production` is false
-
-## TODO
-
-✳️ add open all
-✳️ add close all
-✳️ multiple initials
-
-✳️ add events (onChange, onOpen, onClose, onOpening, onClosing)
-✳️ add ally
-
-✳️ add aliases to rollup
+# To Do
