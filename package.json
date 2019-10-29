@@ -25,6 +25,6 @@
   },
   "scripts": {
     "start": "start-storybook -p 7000",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-story": "build-storybook -c .storybook"
   }
 }

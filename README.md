@@ -1,10 +1,13 @@
 ## About
 
+![Storybook](https://toastyboost.github.io/react-collapser/)
+
 Basic and ⚡ storybook starter with common features for your project.
 
-## Start
+## Actions
 
 `yarn install && yarn start` - start development on `http://localhost:7000`
+`yarn build-story` - build storybook
 
 ## Features
 
