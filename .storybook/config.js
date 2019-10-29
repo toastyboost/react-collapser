@@ -1,22 +1,38 @@
-import { configure, addDecorator, addParameters } from "@storybook/react"
+import { configure, addDecorator, addParameters } from '@storybook/react'
 
-import { withInfo } from "@storybook/addon-info"
-import { withKnobs } from "@storybook/addon-knobs/react"
+import { configureActions } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { withA11y } from '@storybook/addon-a11y'
+import { withConsole } from '@storybook/addon-console'
+import { withInfo } from '@storybook/addon-info'
+import { themes } from '@storybook/theming'
 
-addDecorator(withInfo({ header: true, inline: true }))
-addDecorator(withKnobs)
+// Global
 
 addParameters({
   options: {
     showPanel: true,
-    panelPosition: "right"
+    panelPosition: 'right',
+    theme: themes.dark
   }
 })
 
-const req = require.context("../src/stories", true, /.jsx/)
+// Plugins
 
-function loadStories() {
-  req.keys().forEach(req)
-}
+configureActions({
+  depth: 20,
+  limit: 5
+})
 
-configure(loadStories, module)
+addDecorator(
+  withInfo({
+    header: true
+  })
+)
+
+addDecorator(withKnobs)
+addDecorator(withA11y)
+
+addDecorator((storyFn, context) => withConsole()(storyFn)(context))
+
+configure(require.context('../src/stories', true, /\.stories\.jsx$/), module)
