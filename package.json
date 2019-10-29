@@ -1,8 +1,8 @@
 {
-  "name": "rollup-boilerplate",
-  "version": "1.0.0",
+  "name": "react-collapser",
+  "version": "1.0.1",
   "main": "index.js",
-  "repository": "https://github.com/toastyboost/rollup-boilerplate",
+  "repository": "https://github.com/toastyboost/react-collapser",
   "author": "https://github.com/toastyboost",
   "license": "MIT",
   "devDependencies": {

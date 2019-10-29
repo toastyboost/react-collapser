@@ -1,32 +1,21 @@
 import * as React from 'react'
 
-import { CollapserContext } from '../collapser'
+import { Ctx } from '../collapser'
 
 export const Panel = (props) => {
-  const { className, children, isOpen } = props
+  const { children } = props
 
-  const { animated } = React.useContext(CollapserContext)
+  const { isOpen } = React.useContext(Ctx)
 
   return (
     <div
       {...props}
-      className={`accordion-content content-id- ${className ? ' ' + className : ''}${
-        isOpen ? 'isOpen' : ''
-      }`}
+      className={`panel`}
       style={{
-        overflow: isOpen ? 'auto' : 'hidden',
-        maxHeight: isOpen ? 'initial' : 0,
-        transition: animated ? '0.3s' : 0
+        display: isOpen ? 'inherit' : 'none'
       }}
     >
       {children}
-      {/* {React.Children.map(children, (child) => {
-        return typeof child.type === 'function'
-          ? React.cloneElement(child, {
-              className: 'accordion-nested'
-            })
-          : child
-      })} */}
     </div>
   )
 }

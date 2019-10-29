@@ -2,87 +2,38 @@ import * as React from 'react'
 import { Collapser, Trigger, Panel } from '@/components'
 import { Ui } from '@/libs/ui'
 
-export default { title: 'Starter' }
+export default { title: 'Collapser' }
 
-// export const defaultInition = () => {
-//   return (
-//     <Ui>
-//       <Collapser>
-//         <Trigger>Learn Once, Write Anywhere</Trigger>
-//         <Panel>
-//           We don’t make assumptions about the rest of your technology stack, so you can develop new
-//           features in React without <a>rewriting</a> existing code
-//         </Panel>
-//       </Collapser>
-//     </Ui>
-//   )
-// }
-
-// export const multipleCollapsers = () => {
-//   return (
-//     <Ui>
-//       <Collapser>
-//         <Trigger>Learn Once, Write Anywhere</Trigger>
-//         <Panel>
-//           We don’t make assumptions about the rest of your technology stack, so you can develop new
-//           features in React without <a>rewriting</a> existing code
-//         </Panel>
-//       </Collapser>
-//       <Collapser>
-//         <Trigger>Learn Once, Write Anywhere</Trigger>
-//         <Panel>
-//           We don’t make assumptions about the rest of your technology stack, so you can develop new
-//           features in React without <a>rewriting</a> existing code
-//         </Panel>
-//       </Collapser>
-//     </Ui>
-//   )
-// }
-
-// export const nestedCollapsers = () => {
-//   return (
-//     <Ui>
-//       <Collapser>
-//         <Trigger>1</Trigger>
-//         <Panel>
-//           About the rest of your technology stack:
-//           <Collapser>
-//             <Trigger>1 nested</Trigger>
-//             <Panel>
-//               We don’t make assumptions about the rest of your technology stack, so you can develop
-//               new features in React without <a>rewriting</a> existing code
-//             </Panel>
-//           </Collapser>
-//         </Panel>
-//       </Collapser>
-
-//       <Collapser>
-//         <Trigger>2</Trigger>
-//         <Panel>
-//           We don’t make assumptions about the rest of your technology stack, so you can develop new
-//           features in React without <a>rewriting</a> existing code
-//         </Panel>
-//       </Collapser>
-//     </Ui>
-//   )
-// }
-
-export const dependetCollapsers = () => {
+export const defaut = () => {
   return (
     <Ui>
-      <Collapser collapsible={true}>
-        test
-        <Collapser>
-          <Trigger>1</Trigger>
-          <Panel>About the rest of your technology stack:</Panel>
-        </Collapser>
-        <Collapser>
-          <Trigger>2</Trigger>
-          <Panel>
-            We don’t make assumptions about the rest of your technology stack, so you can develop
-            new features in React without <a>rewriting</a> existing code
-          </Panel>
-        </Collapser>
+      <Collapser>
+        <Trigger>About dogs</Trigger>
+        <Panel>
+          A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be
+          found as a welcome guest in many households across the world.
+        </Panel>
+      </Collapser>
+      <Collapser>
+        <Trigger>About cats</Trigger>
+        <Panel>
+          Here more details:
+          <Collapser>
+            <Trigger>Abyssinian Cat</Trigger>
+            <Panel>
+              Abyssinians are highly intelligent and intensely inquisitive. They love to investigate
+              and will leave no nook or cranny unexplored.
+            </Panel>
+          </Collapser>
+          <Collapser>
+            <Trigger>American Bobtail Cat Breed</Trigger>
+            <Panel>
+              Confident and friendly, the American Bobtail is a highly intelligent breed with a
+              clownlike personality. Looking much like a bobtailed wildcat, this rare and athletic
+              breed can be taught to walk on a leash.
+            </Panel>
+          </Collapser>
+        </Panel>
       </Collapser>
     </Ui>
   )

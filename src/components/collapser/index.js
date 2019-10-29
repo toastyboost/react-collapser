@@ -1,30 +1,24 @@
 import * as React from 'react'
-import { getId } from '@/libs'
-// import { CollapsibleContext } from '../collapser'
 
-export const CollapserContext = React.createContext()
+export const Ctx = React.createContext()
 
 export const Collapser = (props) => {
-  const { className = '', children, animated = false, collapseID = null } = props
+  const { children, index = 0 } = props
 
-  const [currentID] = React.useState(!collapseID && getId())
-  const [activeID, setActiveID] = React.useState(null)
+  const [activeID, setActiveID] = React.useState(index)
+  const [isOpen, toggle] = React.useState(isOpen)
 
-  console.log(currentID, activeID)
+  const handleToggle = () => {
+    toggle(!isOpen)
+  }
+
+  const handleActive = (i) => {
+    setActiveID(i)
+  }
+
   return (
-    <div {...props} className={`accordion${className ? ' ' + className : ''}`}>
-      <CollapserContext.Provider value={[]}>
-        {React.Children.map(children, (child, index) =>
-          typeof child.type === 'function'
-            ? React.cloneElement(child, {
-                index,
-                collapseID: currentID,
-                isOpen: activeID === currentID,
-                setActive: setActiveID
-              })
-            : child
-        )}
-      </CollapserContext.Provider>
+    <div {...props} className={`collapser`}>
+      <Ctx.Provider value={{ handleToggle, handleActive, isOpen }}>{children}</Ctx.Provider>
     </div>
   )
 }

@@ -1,24 +1,19 @@
 import * as React from 'react'
 
-import { CollapserContext } from '../collapser'
+import { Ctx } from '../collapser'
 
 export const Trigger = (props) => {
-  const { className, collapseID, open, setActive } = props
+  const { children, index } = props
+  const { handleToggle, handleActive } = React.useContext(Ctx)
 
-  const { animated } = React.useContext(CollapserContext)
+  const handleClick = () => {
+    handleToggle()
+    handleActive(index)
+  }
 
   return (
-    <div
-      {...props}
-      className={`accordion-trigger trigger-id-${collapseID} ${open ? 'isOpen' : ''}${
-        className ? ' ' + className : ''
-      }`}
-      onClick={() => {
-        setActive(collapseID)
-      }}
-      style={{ cursor: 'pointer', transition: animated ? '0.3s' : 0 }}
-    >
-      {collapseID} {open && open}
+    <div {...props} className={`trigger`} onClick={handleClick}>
+      {children}
     </div>
   )
 }
