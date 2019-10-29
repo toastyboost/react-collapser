@@ -1,25 +1,9 @@
 ## About
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
-Basic and ⚡ storybook starter with common features for your project.
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)  
+Basic collapse compinent for your App.
 
-## Actions
+## Scripts
 
-`yarn install && yarn start` - start development on `http://localhost:7000`
+`yarn install && yarn start` - start development on `http://localhost:7000`  
 `yarn build-story` - build storybook
-
-## Features
-
-🔹 addon-knobs  
-🔀 addon-actions  
-🔹 addon-console  
-🔸 addon-a11y  
-📄 addon-info
-
-🔸Alias in config
-
-# Other things to know
-
-Typescript version in /typescript branch
-
-# To Do
