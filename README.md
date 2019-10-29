@@ -1,7 +1,6 @@
 ## About
 
-![Storybook](https://toastyboost.github.io/react-collapser/)
-
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
 Basic and ⚡ storybook starter with common features for your project.
 
 ## Actions
