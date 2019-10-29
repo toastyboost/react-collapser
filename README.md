@@ -1,3 +1,5 @@
+## React-Collapser
+
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)  
 Basic and lightweight collapsible component for your App.
 
@@ -11,7 +13,11 @@ Basic and lightweight collapsible component for your App.
 </Collapser>
 ```
 
-## Scripts
+## Installation
 
-`yarn install && yarn start` - start development on `http://localhost:7000`  
+`yarn install react-collapser` - start development on `http://localhost:7000`
+
+## Scritps
+
+`yarn start` - run storybook for development on `http://localhost:7000`  
 `yarn build-story` - build storybook
