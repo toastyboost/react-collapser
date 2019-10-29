@@ -15,9 +15,9 @@ Basic and lightweight collapsible component for your App.
 
 ## Installation
 
-`yarn install react-collapser` - start development on `http://localhost:7000`
+`yarn install react-collapser`
 
-## Scritps
+## Development scritps
 
 `yarn start` - run storybook for development on `http://localhost:7000`  
 `yarn build-story` - build storybook
