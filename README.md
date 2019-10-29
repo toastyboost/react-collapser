@@ -1,5 +1,3 @@
-## About
-
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)  
 Basic and lightweight collapsible component for your App.
 
