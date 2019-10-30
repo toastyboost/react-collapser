@@ -1,7 +1,7 @@
 ## React-Collapser
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)  
-Basic and lightweight collapsible component for your App.
+Basic, fast and lightweight collapsible component for your App.
 
 ```
 <Collapser>
@@ -23,10 +23,10 @@ Always open - accordion have opened items, if boolean - if number - opened count
 
 ## Features
 
-Bem class states duplicating  
-No useless parameters like id or index  
-SSR friendly  
-Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
+- [x] Bem class states duplicating
+- [x] No useless parameters like id or index
+- [x] SSR friendly
+- [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
 
 ## Development scritps
 
