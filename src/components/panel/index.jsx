@@ -5,14 +5,21 @@ import { Ctx } from '../collapser'
 export const Panel = (props) => {
   const { className, children, index } = props
 
-  const { activeIndex } = React.useContext(Ctx)
+  const { activeIndex, animated } = React.useContext(Ctx)
+
+  const isOpen = index === activeIndex
+  const css = 'collapser-panel'
 
   return (
     <div
       {...props}
-      className={`collapser-panel ${className}`}
+      className={`${css} ${isOpen ? `${css}--open` : `${css}--closed`} ${
+        !className ? '' : className
+      }`}
       style={{
-        display: activeIndex === index ? 'inherit' : 'none'
+        transition: animated ? 'all .2s ease-in-out' : 0,
+        overflow: isOpen ? 'auto' : 'hidden',
+        maxHeight: isOpen ? 'initial' : 0
       }}
     >
       {children}

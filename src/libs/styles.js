@@ -27,7 +27,11 @@ export const Container = styled.div`
 
     &-panel {
       background-color: #fff;
-      padding: 16px;
+      padding: 0 16px;
+
+      &--open {
+        padding: 16px;
+      }
     }
 
     &-trigger {

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Collapser, Trigger, Panel } from '@/components'
-import { Ui } from '@/libs/ui'
+import { Ui, dogs, cats } from '@/libs'
 
 export default { title: 'Inheritance' }
 
@@ -34,6 +34,31 @@ export const defaut = () => {
             </Panel>
           </Collapser>
         </Panel>
+      </Collapser>
+    </Ui>
+  )
+}
+
+export const Mapping = () => {
+  return (
+    <Ui>
+      <Collapser>
+        {dogs.map(({ dogName, dogText }, dogKey) => (
+          <React.Fragment key={dogKey}>
+            <Trigger>{dogName}</Trigger>
+            <Panel>
+              {dogText}
+              <Collapser>
+                {cats.map(({ catName, catText }, catKey) => (
+                  <React.Fragment key={catKey}>
+                    <Trigger>{catName}</Trigger>
+                    <Panel>{catText}</Panel>
+                  </React.Fragment>
+                ))}
+              </Collapser>
+            </Panel>
+          </React.Fragment>
+        ))}
       </Collapser>
     </Ui>
   )

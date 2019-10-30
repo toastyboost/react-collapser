@@ -17,10 +17,16 @@ Basic and lightweight collapsible component for your App.
 
 `yarn install react-collapser`
 
+## Props
+
+Always open - accordion have opened items, if boolean - if number - opened count of
+
 ## Features
 
-Bem class states duplicateing
-No useless parameters like id or index
+Bem class states duplicating  
+No useless parameters like id or index  
+SSR friendly  
+Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
 
 ## Development scritps
 
