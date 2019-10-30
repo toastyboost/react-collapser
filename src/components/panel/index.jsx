@@ -3,16 +3,16 @@ import * as React from 'react'
 import { Ctx } from '../collapser'
 
 export const Panel = (props) => {
-  const { children } = props
+  const { className, children, index } = props
 
-  const { isOpen } = React.useContext(Ctx)
+  const { activeIndex } = React.useContext(Ctx)
 
   return (
     <div
       {...props}
-      className={`panel`}
+      className={`collapser-panel ${className}`}
       style={{
-        display: isOpen ? 'inherit' : 'none'
+        display: activeIndex === index ? 'inherit' : 'none'
       }}
     >
       {children}

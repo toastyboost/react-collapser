@@ -17,6 +17,11 @@ Basic and lightweight collapsible component for your App.
 
 `yarn install react-collapser`
 
+## Features
+
+Bem class states duplicateing
+No useless parameters like id or index
+
 ## Development scritps
 
 `yarn start` - run storybook for development on `http://localhost:7000`  

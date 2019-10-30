@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Collapser, Trigger, Panel } from '@/components'
-import { Ui } from '@/libs/ui'
+import { Ui } from '@/libs'
 
 export default { title: 'Collapser' }
 
-export const defaut = () => {
+export const Tab = () => {
   return (
     <Ui>
       <Collapser>
@@ -14,25 +14,23 @@ export const defaut = () => {
           found as a welcome guest in many households across the world.
         </Panel>
       </Collapser>
+    </Ui>
+  )
+}
+
+export const Accordion = () => {
+  return (
+    <Ui>
       <Collapser>
-        <Trigger>About cats</Trigger>
+        <Trigger>About dogs</Trigger>
         <Panel>
-          Here more details:
-          <Collapser>
-            <Trigger>Abyssinian Cat</Trigger>
-            <Panel>
-              Abyssinians are highly intelligent and intensely inquisitive. They love to investigate
-              and will leave no nook or cranny unexplored.
-            </Panel>
-          </Collapser>
-          <Collapser>
-            <Trigger>American Bobtail Cat Breed</Trigger>
-            <Panel>
-              Confident and friendly, the American Bobtail is a highly intelligent breed with a
-              clownlike personality. Looking much like a bobtailed wildcat, this rare and athletic
-              breed can be taught to walk on a leash.
-            </Panel>
-          </Collapser>
+          A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be
+          found as a welcome guest in many households across the world.
+        </Panel>
+        <Trigger>Abyssinian Cat</Trigger>
+        <Panel>
+          Abyssinians are highly intelligent and intensely inquisitive. They love to investigate and
+          will leave no nook or cranny unexplored.
         </Panel>
       </Collapser>
     </Ui>

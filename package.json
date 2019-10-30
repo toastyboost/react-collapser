@@ -13,15 +13,21 @@
     "@storybook/addon-info": "^5.2.5",
     "@storybook/addon-knobs": "^5.2.5",
     "@storybook/react": "^5.2.5",
-    "antd": "^3.24.3",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
-    "styled-components": "^4.4.0"
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0"
   },
   "dependencies": {
+    "antd": "^3.24.3",
     "path": "^0.12.7",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "start-storybook -p 7000",

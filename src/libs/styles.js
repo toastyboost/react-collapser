@@ -1,6 +1,4 @@
-import * as React from 'react'
 import styled from 'styled-components'
-import { Card } from 'antd'
 
 import 'antd/dist/antd.css'
 
@@ -27,12 +25,12 @@ export const Container = styled.div`
     border-radius: 3px;
     margin-top: 12px;
 
-    .panel {
+    &-panel {
       background-color: #fff;
       padding: 16px;
     }
 
-    .trigger {
+    &-trigger {
       position: relative;
       padding: 12px 16px;
       color: rgba(0, 0, 0, 0.85);
@@ -40,13 +38,3 @@ export const Container = styled.div`
     }
   }
 `
-
-export const Ui = ({ children }) => {
-  return (
-    <Container>
-      <Card title="Accordion" bordered={false}>
-        {children}
-      </Card>
-    </Container>
-  )
-}
