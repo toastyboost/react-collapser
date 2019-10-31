@@ -25,7 +25,9 @@ export const Collapser = (props) => {
   }
 
   const cloneChildren = (clone, key, isFragment = false) => {
-    return React.cloneElement(clone, { index: key % (isFragment ? 1 : 2) ? key - 1 : key })
+    return React.cloneElement(clone, {
+      index: key % (isFragment ? 1 : 2) ? key - 1 : key
+    })
   }
 
   return (

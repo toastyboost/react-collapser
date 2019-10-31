@@ -20,6 +20,7 @@ Basic, fast and lightweight collapsible component for your App.
 ## Props
 
 Always open - accordion have opened items, if boolean - if number - opened count of
+Animated
 
 ## Features
 
@@ -28,7 +29,7 @@ Always open - accordion have opened items, if boolean - if number - opened count
 - [x] SSR friendly
 - [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
 
-## Development scritps
+## Development
 
 `yarn start` - run storybook for development on `http://localhost:7000`  
 `yarn build-story` - build storybook
