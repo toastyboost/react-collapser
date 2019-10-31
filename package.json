@@ -32,6 +32,6 @@
   },
   "scripts": {
     "start": "start-storybook -p 7000",
-    "build-story": "build-storybook -c .storybook"
+    "build-story": "rm -rf storybook-static && build-storybook -c .storybook"
   }
 }

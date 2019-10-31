@@ -1,6 +1,19 @@
 import styled from 'styled-components'
+import { Collapser, Trigger, Panel } from '@/components'
 
 import 'antd/dist/antd.css'
+
+export const StyledCollapser = styled(Collapser)`
+  border-radius: 3px;
+  overflow: hidden;
+`
+export const StyledTrigger = styled(Trigger)`
+  background-color: #845ec2;
+  color: #fff;
+`
+export const StyledPanel = styled(Panel)`
+  background-color: #ff6f91;
+`
 
 export const Container = styled.div`
   background: #ececec;
@@ -26,7 +39,6 @@ export const Container = styled.div`
     margin-top: 12px;
 
     &-panel {
-      background-color: #fff;
       padding: 0 16px;
 
       &--open {
@@ -37,7 +49,6 @@ export const Container = styled.div`
     &-trigger {
       position: relative;
       padding: 12px 16px;
-      color: rgba(0, 0, 0, 0.85);
       line-height: 22px;
     }
   }

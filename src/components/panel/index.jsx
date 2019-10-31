@@ -13,9 +13,9 @@ export const Panel = (props) => {
   return (
     <div
       {...props}
-      className={`${css} ${isOpen ? `${css}--open` : `${css}--closed`} ${
+      className={` ${isOpen ? `${css}--open` : `${css}--closed`} ${
         !className ? '' : className
-      }`}
+      } ${css} `}
       style={{
         transition: animated ? 'all .2s ease-in-out' : 0,
         overflow: isOpen ? 'auto' : 'hidden',
