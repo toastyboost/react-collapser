@@ -1,6 +1,6 @@
 {
   "name": "react-collapser",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "./dist/index",
   "repository": "https://github.com/toastyboost/react-collapser",
   "author": "https://github.com/toastyboost",
@@ -28,9 +28,7 @@
     "eslint-plugin-react": "^7.16.0",
     "prettier": "^1.18.2",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
-  },
-  "dependencies": {
+    "react-dom": "^16.11.0",
     "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-console": "^1.2.1",

@@ -1,7 +1,6 @@
 ## React-Collapser
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)  
-Basic, fast and lightweight collapsible component for your App.
+Basic, fast and lightweight collapsible component for your App. Zero dependencies, working from a box.
 
 ```
 import * as React from 'react'
@@ -20,12 +19,9 @@ import {Collapser, Trigger, Panel } from 'react-collapser'
 
 `yarn install react-collapser`
 
-## Props
-
-Always open - accordion have opened items, if boolean - if number - opened count of  
-Animated
-
 ## Features
+
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
 
 - [x] Rollup compile
 - [x] Bem class states duplicating, but no preserve class becouse its unneccessary
@@ -33,6 +29,11 @@ Animated
 - [x] SSR friendly
 - [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
 - [x] Zero dependencies
+
+## Props
+
+Always open - accordion have opened items, if boolean - if number - opened count of  
+Animated
 
 ## Development
 
