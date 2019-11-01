@@ -37,5 +37,5 @@ Animated
 ## Development
 
 `yarn start` - run storybook for development on `http://localhost:7000`  
-`yarn build` - run Rollup for compile production build
+`yarn build` - run Rollup for compile production build  
 `yarn build-story` - build storybook
