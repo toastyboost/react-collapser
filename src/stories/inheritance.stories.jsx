@@ -10,8 +10,9 @@ export const defaut = () => {
       <Collapser>
         <Trigger>About dogs</Trigger>
         <Panel>
-          A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be
-          found as a welcome guest in many households across the world.
+          A dog is a type of domesticated animal. Known for its loyalty and
+          faithfulness, it can be found as a welcome guest in many households
+          across the world.
         </Panel>
       </Collapser>
       <Collapser>
@@ -21,16 +22,17 @@ export const defaut = () => {
           <Collapser>
             <Trigger>Abyssinian Cat</Trigger>
             <Panel>
-              Abyssinians are highly intelligent and intensely inquisitive. They love to investigate
-              and will leave no nook or cranny unexplored.
+              Abyssinians are highly intelligent and intensely inquisitive. They
+              love to investigate and will leave no nook or cranny unexplored.
             </Panel>
           </Collapser>
           <Collapser>
             <Trigger>American Bobtail Cat Breed</Trigger>
             <Panel>
-              Confident and friendly, the American Bobtail is a highly intelligent breed with a
-              clownlike personality. Looking much like a bobtailed wildcat, this rare and athletic
-              breed can be taught to walk on a leash.
+              Confident and friendly, the American Bobtail is a highly
+              intelligent breed with a clownlike personality. Looking much like
+              a bobtailed wildcat, this rare and athletic breed can be taught to
+              walk on a leash.
             </Panel>
           </Collapser>
         </Panel>
@@ -43,21 +45,21 @@ export const Mapping = () => {
   return (
     <Ui>
       <Collapser>
-        {dogs.map(({ dogName, dogText }, dogKey) => (
-          <React.Fragment key={dogKey}>
+        {dogs.map(({ dogName, dogText }) => (
+          <>
             <Trigger>{dogName}</Trigger>
             <Panel>
               {dogText}
               <Collapser>
-                {cats.map(({ catName, catText }, catKey) => (
-                  <React.Fragment key={catKey}>
+                {cats.map(({ catName, catText }) => (
+                  <>
                     <Trigger>{catName}</Trigger>
                     <Panel>{catText}</Panel>
-                  </React.Fragment>
+                  </>
                 ))}
               </Collapser>
             </Panel>
-          </React.Fragment>
+          </>
         ))}
       </Collapser>
     </Ui>

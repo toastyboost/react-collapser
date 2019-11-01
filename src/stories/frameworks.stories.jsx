@@ -8,11 +8,11 @@ export const styledComponents = () => {
   return (
     <Ui>
       <StyledCollapser alwaysOpen animated>
-        {dogs.map(({ dogName, dogText }, key) => (
-          <React.Fragment key={key}>
+        {dogs.map(({ dogName, dogText }) => (
+          <>
             <StyledTrigger>{dogName}</StyledTrigger>
             <StyledPanel>{dogText}</StyledPanel>
-          </React.Fragment>
+          </>
         ))}
       </StyledCollapser>
     </Ui>

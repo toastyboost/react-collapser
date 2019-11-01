@@ -10,9 +10,15 @@ export const StyledCollapser = styled(Collapser)`
 export const StyledTrigger = styled(Trigger)`
   background-color: #845ec2;
   color: #fff;
+  padding: 12px 16px;
 `
 export const StyledPanel = styled(Panel)`
   background-color: #ff6f91;
+  padding: 0 16px;
+
+  &.open {
+    padding: 16px;
+  }
 `
 
 export const Container = styled.div`
@@ -38,18 +44,24 @@ export const Container = styled.div`
     border-radius: 3px;
     margin-top: 12px;
 
-    &-panel {
-      padding: 0 16px;
-
-      &--open {
-        padding: 16px;
-      }
-    }
-
     &-trigger {
       position: relative;
       padding: 12px 16px;
       line-height: 22px;
+      background-color: #f1f1f1;
+
+      &.open {
+        border-bottom: 1px solid #d9d9d9;
+      }
+    }
+
+    &-panel {
+      padding: 0 16px;
+      border-bottom: 1px solid #d9d9d9;
+
+      &.open {
+        padding: 16px;
+      }
     }
   }
 `

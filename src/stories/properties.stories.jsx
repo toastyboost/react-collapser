@@ -23,21 +23,21 @@ export const alwaysOpenWithNumber = () => {
   return (
     <Ui>
       <Collapser alwaysOpen={1}>
-        {dogs.map(({ dogName, dogText }, dogKey) => (
-          <React.Fragment key={dogKey}>
+        {dogs.map(({ dogName, dogText }) => (
+          <>
             <Trigger>{dogName}</Trigger>
             <Panel>
               {dogText}
               <Collapser>
-                {cats.map(({ catName, catText }, catKey) => (
-                  <React.Fragment key={catKey}>
+                {cats.map(({ catName, catText }) => (
+                  <>
                     <Trigger>{catName}</Trigger>
                     <Panel>{catText}</Panel>
-                  </React.Fragment>
+                  </>
                 ))}
               </Collapser>
             </Panel>
-          </React.Fragment>
+          </>
         ))}
       </Collapser>
     </Ui>
@@ -48,11 +48,11 @@ export const animated = () => {
   return (
     <Ui>
       <Collapser animated>
-        {dogs.map(({ dogName, dogText }, key) => (
-          <React.Fragment key={key}>
+        {dogs.map(({ dogName, dogText }) => (
+          <>
             <Trigger>{dogName}</Trigger>
             <Panel>{dogText}</Panel>
-          </React.Fragment>
+          </>
         ))}
       </Collapser>
     </Ui>

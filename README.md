@@ -4,6 +4,9 @@
 Basic, fast and lightweight collapsible component for your App.
 
 ```
+import * as React from 'react'
+import {Collapser, Trigger, Panel } from 'react-collapser'
+
 <Collapser>
   <Trigger>About dogs</Trigger>
   <Panel>
@@ -19,15 +22,16 @@ Basic, fast and lightweight collapsible component for your App.
 
 ## Props
 
-Always open - accordion have opened items, if boolean - if number - opened count of
+Always open - accordion have opened items, if boolean - if number - opened count of  
 Animated
 
 ## Features
 
-- [x] Bem class states duplicating
+- [x] Bem class states duplicating, but no preserve class becouse its unneccessary
 - [x] No useless parameters like id or index
 - [x] SSR friendly
 - [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
+- [x] Zero dependencies
 
 ## Development
 
