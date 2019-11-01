@@ -27,6 +27,7 @@ Animated
 
 ## Features
 
+- [x] Rollup compile
 - [x] Bem class states duplicating, but no preserve class becouse its unneccessary
 - [x] No useless parameters like id or index
 - [x] SSR friendly
@@ -36,4 +37,5 @@ Animated
 ## Development
 
 `yarn start` - run storybook for development on `http://localhost:7000`  
+`yarn build` - run Rollup for compile production build
 `yarn build-story` - build storybook

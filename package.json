@@ -1,12 +1,21 @@
 {
   "name": "react-collapser",
-  "version": "1.0.1",
-  "main": "index.js",
+  "version": "1.0.0",
+  "main": "./dist/index",
   "repository": "https://github.com/toastyboost/react-collapser",
   "author": "https://github.com/toastyboost",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.6.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "eslint": "^6.6.0",
@@ -17,7 +26,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
   },
   "dependencies": {
     "@storybook/addon-a11y": "^5.2.5",
@@ -27,14 +38,19 @@
     "@storybook/addon-knobs": "^5.2.5",
     "@storybook/react": "^5.2.5",
     "antd": "^3.24.3",
+    "rollup": "^1.26.2",
+    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "@rollup/plugin-alias": "^2.2.0",
     "styled-components": "^4.4.0"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
   },
   "scripts": {
     "start": "start-storybook -p 7000",
+    "build": "rollup -c",
     "build-story": "rm -rf storybook-static && build-storybook -c .storybook"
   }
 }
