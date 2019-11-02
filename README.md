@@ -33,8 +33,8 @@ npm i react-collapser
 ## Features
 
 - [x] Unlimited nesting
-- [x] Style component exactly how you need. With styled-components or
-      predefined CSS classes, which repeats DOM structure and states.
+- [x] Style component exactly how you need. With styled-components  
+       or react predefined CSS classes, which repeats DOM structure and states.
 
 - [x] No useless parameters like id or index
 - [x] SSR friendly
@@ -46,7 +46,7 @@ npm i react-collapser
 `alwaysOpen` - accordion have opened items, if boolean - if number - opened count of  
 `animated` - is default animations working
 
-## Demo features
+## Demo
 
 ![react-collapser demo](https://toastyboost.github.io/upload/react-collapser-demo.gif)
 
