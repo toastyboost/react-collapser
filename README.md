@@ -41,7 +41,8 @@ npm i react-collapser
 
 - [x] Styling
 
-Style component exactly how you need. With 💅styled-components or predefined CSS classes, which repeats DOM structure and states.
+Style component exactly how you need. With styled-components or predefined
+CSS classes, which repeats DOM structure and states.
 
 - [x] No useless parameters like id or index
 - [x] SSR friendly
