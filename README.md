@@ -23,33 +23,34 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
 
-## Install
+## Installation (NPM / Yarn)
 
 ```
 yarn add react-collapser
 npm i react-collapser
 ```
 
-![Alt Text](https://toastyboost.github.io/upload/react-collapser-demo.gif)
-
-## Props
-
-`alwaysOpen` - accordion have opened items, if boolean - if number - opened count of  
-`animated` - is default animations working
-
 ## Features
 
-- [x] Styling
-
-Style component exactly how you need. With styled-components or predefined  
-CSS classes, which repeats DOM structure and states.
+- [x] Unlimited nesting
+- [x] Style component exactly how you need. With styled-components or
+      predefined CSS classes, which repeats DOM structure and states.
 
 - [x] No useless parameters like id or index
 - [x] SSR friendly
 - [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
 - [x] Zero dependencies
 
-## Development
+## Component API
+
+`alwaysOpen` - accordion have opened items, if boolean - if number - opened count of  
+`animated` - is default animations working
+
+## Demo features
+
+![react-collapser demo](https://toastyboost.github.io/upload/react-collapser-demo.gif)
+
+## Development setup
 
 `yarn start` - run storybook for development on `http://localhost:7000`  
 `yarn build` - run Rollup for compile production build  
