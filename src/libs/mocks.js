@@ -25,6 +25,6 @@ export const dogs = [
   {
     dogName: 'Australian Cattle Dog',
     dogText:
-      'Agility, Herding, Obedience, Rally Obedience, Tracking Agile, strong and courageous, the Australian Cattle Dog was developed in the 1800s in Australia. An intelligent and determined high-energy working dog, the Australian Cattle Dog is happiest in large, open spaces with an engaging job to do.'
+      'An intelligent and determined high-energy working dog, the Australian Cattle Dog is happiest in large, open spaces with an engaging job to do.'
   }
 ]

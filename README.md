@@ -1,9 +1,11 @@
 # 🏄‍ React-Collapser
 
-Basic, fast and lightweight React collapsible component for your `<App />`  
-Zero dependencies, works out of the box without any settings
-
 ![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=minified) [![Build Status](https://travis-ci.org/toastyboost/react-collapser.svg?branch=master)](https://travis-ci.org/toastyboost/react-collapser) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=dependencies)
+
+Basic, fast and lightweight React collapse component for your `<App />`  
+Zero dependencies, works out of the box, .
+
+![Alt Text](https://toastyboost.github.io/upload/react-collapser-demo.gif)
 
 ## Usage
 
@@ -14,7 +16,9 @@ import {Collapser, Trigger, Panel } from 'react-collapser'
 <Collapser>
   <Trigger>About dogs</Trigger>
   <Panel>
-    A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.
+    A dog is a type of domesticated animal. Known for its
+    loyalty and faithfulness, it can be found as a welcome guest
+    in many households across the world.
   </Panel>
 </Collapser>
 ```
@@ -28,17 +32,21 @@ yarn add react-collapser
 npm i react-collapser
 ```
 
-## Features
-
--[x] Rollup compile  
--[x] Bem class states duplicating, but no preserve class becouse its unneccessary -[x] No useless parameters like id or index -[x] SSR friendly  
--[x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself  
--[x] Zero dependencies
-
 ## Props
 
-Always open - accordion have opened items, if boolean - if number - opened count of  
-Animated
+`alwaysOpen` - accordion have opened items, if boolean - if number - opened count of  
+`animated` - is default animations working
+
+## Features
+
+- [x] Styling
+
+Style component exactly how you need. With 💅styled-components or predefined CSS classes, which repeats DOM structure and states.
+
+- [x] No useless parameters like id or index
+- [x] SSR friendly
+- [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
+- [x] Zero dependencies
 
 ## Development
 
@@ -46,7 +54,11 @@ Animated
 `yarn build` - run Rollup for compile production build  
 `yarn build-story` - build storybook
 
+-[x] For build we are suing Rollup
+
 ## TODO
 
 add tags to package.json  
 add bages
+add css files with ready styles
+add disable props

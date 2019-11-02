@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { StyledCollapser, StyledTrigger, StyledPanel, Ui, dogs } from '@/libs'
 
-export default { title: 'Frameworks' }
+export default { title: 'Styling' }
 
 export const styledComponents = () => {
   return (
