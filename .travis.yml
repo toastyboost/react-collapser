@@ -1,0 +1,11 @@
+language: node_js
+
+node_js:
+  - '10.14.1'
+
+branches:
+  only:
+    - master
+
+script:
+  - yarn build
