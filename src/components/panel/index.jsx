@@ -2,10 +2,20 @@ import * as React from 'react'
 
 import { Ctx } from '../collapser'
 
-export const Panel = ({ className = 'collapser-panel', children, index }) => {
-  const { activeIndex, animated } = React.useContext(Ctx)
+export const Panel = (props) => {
+  const { className = 'collapser-panel', children, index } = props
 
-  const isOpen = index === activeIndex
+  const { activeIndex, animated, openAll } = React.useContext(Ctx)
+
+  const [isOpen, toggle] = React.useState(false)
+
+  React.useEffect(() => {
+    openAll && toggle(openAll)
+  }, [openAll])
+
+  React.useEffect(() => {
+    toggle(index === activeIndex)
+  }, [activeIndex])
 
   const classNames = [className, isOpen ? 'open' : 'closed'].join(' ')
 

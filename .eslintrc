@@ -27,6 +27,7 @@
     "no-console": "off",
     "react/no-array-index-key": "off",
     "no-confusing-arrow": "off",
-    "indent": "off"
+    "indent": "off",
+    "no-unused-expressions": "off"
   }
 }

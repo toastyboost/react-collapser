@@ -1,6 +1,6 @@
 # 🏄‍ React-Collapser
 
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=minified) [![Build Status](https://travis-ci.org/toastyboost/react-collapser.svg?branch=master)](https://travis-ci.org/toastyboost/react-collapser) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=dependencies)
+![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=minified) [![Build Status](https://travis-ci.org/toastyboost/react-collapser.svg?branch=master)](https://travis-ci.org/toastyboost/react-collapser) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=dependencies) &nbsp; [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
 
 Basic, fast and lightweight React collapse component for your `<App />`  
 Zero dependencies, works out of the box, a lot of features.
@@ -21,9 +21,7 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 </Collapser>
 ```
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
-
-## Installation (NPM / Yarn)
+## Install
 
 ```
 yarn add react-collapser
@@ -33,22 +31,23 @@ npm i react-collapser
 ## Features
 
 - [x] Unlimited nesting
-- [x] Style component exactly how you need. With styled-components  
-       or react predefined CSS classes, which repeats DOM structure and states.
-
-- [x] No useless parameters like id or index
+- [x] Only nessesary properties
+- [x] Style component exactly how you need
 - [x] SSR friendly
 - [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
 - [x] Zero dependencies
 
 ## Component API
 
-`alwaysOpen` - accordion have opened items, if boolean - if number - opened count of  
-`animated` - is default animations working
+`alwaysOpen` - collapser always have at least one opened section. Boolean/Number. If number, open collapser with property.  
+`animated` - initiate default animation.
+`openLll` - prop for controled opening of all collapser items
 
 ## Demo
 
 ![react-collapser demo](https://toastyboost.github.io/upload/react-collapser-demo.gif)
+
+Styling with styled-components or react predefined CSS classes, which repeats DOM structure and states.
 
 ## Development setup
 
@@ -61,6 +60,6 @@ npm i react-collapser
 ## TODO
 
 add tags to package.json  
-add bages
-add css files with ready styles
-add disable props
+add css files with ready styles  
+add disable props  
+add controlled state

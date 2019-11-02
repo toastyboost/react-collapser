@@ -2,13 +2,16 @@ import * as React from 'react'
 
 export const Ctx = React.createContext()
 
-export const Collapser = ({
-  className = 'collapser',
-  children,
-  alwaysOpen = false,
-  index = alwaysOpen ? 0 : -1,
-  animated = false
-}) => {
+export const Collapser = (props) => {
+  const {
+    className = 'collapser',
+    children,
+    alwaysOpen = false,
+    index = alwaysOpen ? 0 : -1,
+    animated = false,
+    openAll = false
+  } = props
+
   const [activeIndex, setActiveIndex] = React.useState(index)
 
   const classNames = [className].join(' ')
@@ -33,7 +36,15 @@ export const Collapser = ({
 
   return (
     <div className={classNames}>
-      <Ctx.Provider value={{ handleActive, activeIndex, animated }}>
+      <Ctx.Provider
+        value={{
+          handleActive,
+          setActiveIndex,
+          activeIndex,
+          animated,
+          openAll
+        }}
+      >
         {children.map((child, key) =>
           child.type.toString() === 'Symbol(react.fragment)'
             ? child.props.children.map((item, childKey) =>

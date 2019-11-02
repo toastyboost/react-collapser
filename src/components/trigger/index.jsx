@@ -7,9 +7,18 @@ export const Trigger = ({
   children,
   index
 }) => {
-  const { handleActive, activeIndex } = React.useContext(Ctx)
+  const { handleActive, activeIndex, openAll } = React.useContext(Ctx)
 
-  const isOpen = index === activeIndex
+  const [isOpen, toggle] = React.useState(false)
+
+  React.useEffect(() => {
+    openAll && toggle(openAll)
+  }, [openAll])
+
+  React.useEffect(() => {
+    toggle(index === activeIndex)
+  }, [activeIndex])
+
   const classNames = [className, isOpen ? 'open' : 'closed'].join(' ')
 
   return (
