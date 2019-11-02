@@ -5,13 +5,11 @@
 Basic, fast and lightweight React collapse component for your `<App />`  
 Zero dependencies, works out of the box, .
 
-![Alt Text](https://toastyboost.github.io/upload/react-collapser-demo.gif)
-
 ## Usage
 
 ```
 import * as React from 'react'
-import {Collapser, Trigger, Panel } from 'react-collapser'
+import { Collapser, Trigger, Panel } from 'react-collapser'
 
 <Collapser>
   <Trigger>About dogs</Trigger>
@@ -31,6 +29,8 @@ import {Collapser, Trigger, Panel } from 'react-collapser'
 yarn add react-collapser
 npm i react-collapser
 ```
+
+![Alt Text](https://toastyboost.github.io/upload/react-collapser-demo.gif)
 
 ## Props
 
