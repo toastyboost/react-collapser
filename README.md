@@ -1,6 +1,15 @@
-## React-Collapser
+# React-Collapser
 
-Basic, fast and lightweight collapsible component for your App. Zero dependencies, working from a box.
+Basic, fast and lightweight collapsible component for your `<App />`.  
+Zero dependencies, working from a box.
+
+![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=Minified) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=Dependencies)
+
+```
+yarn add react-collapser
+```
+
+## Usage
 
 ```
 import * as React from 'react'
@@ -15,20 +24,17 @@ import {Collapser, Trigger, Panel } from 'react-collapser'
 </Collapser>
 ```
 
-## Installation
-
-`yarn install react-collapser`
+More examples:  
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
 
 ## Features
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
-
-- [x] Rollup compile
-- [x] Bem class states duplicating, but no preserve class becouse its unneccessary
-- [x] No useless parameters like id or index
-- [x] SSR friendly
-- [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
-- [x] Zero dependencies
+[x] Rollup compile  
+[x] Bem class states duplicating, but no preserve class becouse its unneccessary  
+[x] No useless parameters like id or index
+[x] SSR friendly  
+[x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself  
+[x] Zero dependencies
 
 ## Props
 
@@ -40,3 +46,8 @@ Animated
 `yarn start` - run storybook for development on `http://localhost:7000`  
 `yarn build` - run Rollup for compile production build  
 `yarn build-story` - build storybook
+
+## TODO
+
+add tags to package.json  
+add bages
