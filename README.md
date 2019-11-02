@@ -3,7 +3,7 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=minified) [![Build Status](https://travis-ci.org/toastyboost/react-collapser.svg?branch=master)](https://travis-ci.org/toastyboost/react-collapser) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=dependencies)
 
 Basic, fast and lightweight React collapse component for your `<App />`  
-Zero dependencies, works out of the box, .
+Zero dependencies, works out of the box, a lot of features.
 
 ## Usage
 
