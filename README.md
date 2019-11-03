@@ -40,13 +40,13 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 
 ### Collapser
 
-| Property   | Description                                        | Type    | Default |
-| ---------- | -------------------------------------------------- | ------- | ------- |
-| alwaysOpen | Collapser always have at least one opened panel    | Boolean | false   |
-| alwaysOpen | If property Number, it shows Panel with this index | Number  | 0       |
-| animated   | Initiate default animation                         | Boolean | false   |
-| openAll    | Reveal all closed panels in Collapser              | Boolean | false   |
-| isOpen     | Collpaser becomes fully controlled                 | Boolean | false   |
+| Property   | Description                                                    | Type    | Default |
+| ---------- | -------------------------------------------------------------- | ------- | ------- |
+| alwaysOpen | Collapser always have at least one opened panel                | Boolean | false   |
+| alwaysOpen | If props type of Number, Collapser shows Panel with this index | Number  | 0       |
+| animated   | Initiate default animation                                     | Boolean | false   |
+| openAll    | Reveal all closed panels in Collapser                          | Boolean | false   |
+| isOpen     | Collpaser becomes fully controlled                             | Boolean | false   |
 
 ### Trigger / Panel
 
@@ -60,7 +60,7 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 
 Styling with styled-components or react predefined CSS classes, which repeats DOM structure and states.
 
-## Development setup
+## Development
 
 `yarn start` - run storybook for development on `http://localhost:7000`  
 `yarn build` - run Rollup for compile production build  
