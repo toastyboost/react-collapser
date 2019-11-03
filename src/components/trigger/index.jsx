@@ -2,24 +2,32 @@ import * as React from 'react'
 
 import { Ctx } from '../collapser'
 
-export const Trigger = ({
-  className = 'collapser-trigger',
-  children,
-  index
-}) => {
-  const { handleActive, activeIndex, openAll } = React.useContext(Ctx)
+export const Trigger = (props) => {
+  const {
+    handleActive,
+    activeIndex,
+    openAll,
+    isOpenContext
+  } = React.useContext(Ctx)
 
-  const [isOpen, toggle] = React.useState(false)
+  const {
+    className = 'collapser-trigger',
+    children,
+    index,
+    isOpen = isOpenContext
+  } = props
+
+  const [isOpenState, toggle] = React.useState(isOpen)
 
   React.useEffect(() => {
     openAll && toggle(openAll)
   }, [openAll])
 
   React.useEffect(() => {
-    toggle(index === activeIndex)
-  }, [activeIndex])
+    toggle(isOpen || index === activeIndex)
+  }, [activeIndex, isOpen])
 
-  const classNames = [className, isOpen ? 'open' : 'closed'].join(' ')
+  const classNames = [className, isOpenState ? 'open' : 'closed'].join(' ')
 
   return (
     <div

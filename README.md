@@ -1,9 +1,15 @@
 # 🏄‍ React-Collapser
 
+Basic, fast and lightweight React collapse component for your `<App />`  
+Fully controlled, zero dependencies, works out of the box and a lot of other features.
+
 ![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=minified) [![Build Status](https://travis-ci.org/toastyboost/react-collapser.svg?branch=master)](https://travis-ci.org/toastyboost/react-collapser) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=dependencies) &nbsp; [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
 
-Basic, fast and lightweight React collapse component for your `<App />`  
-Zero dependencies, works out of the box, a lot of features.
+## Install
+
+```
+yarn add react-collapser
+```
 
 ## Usage
 
@@ -21,27 +27,32 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 </Collapser>
 ```
 
-## Install
-
-```
-yarn add react-collapser
-npm i react-collapser
-```
-
 ## Features
 
 - [x] Unlimited nesting
 - [x] Only nessesary properties
-- [x] Style component exactly how you need
+- [x] Unlimited styling in a way you need
 - [x] SSR friendly
-- [x] Gracefuly degradeted logic - if you dont want to customize - use props - if not - style yourself
+- [x] Common features without any props
 - [x] Zero dependencies
 
 ## Component API
 
-`alwaysOpen` - collapser always have at least one opened section. Boolean/Number. If number, open collapser with property.  
-`animated` - initiate default animation.
-`openLll` - prop for controled opening of all collapser items
+### Collapser
+
+| Property   | Description                                        | Type    | Default |
+| ---------- | -------------------------------------------------- | ------- | ------- |
+| alwaysOpen | Collapser always have at least one opened panel    | Boolean | false   |
+| alwaysOpen | If property Number, it shows Panel with this index | Number  | 0       |
+| animated   | Initiate default animation                         | Boolean | false   |
+| openAll    | Reveal all closed panels in Collapser              | Boolean | false   |
+| isOpen     | Collpaser becomes fully controlled                 | Boolean | false   |
+
+### Trigger / Panel
+
+| Property | Description                               | Type    | Default |
+| -------- | ----------------------------------------- | ------- | ------- |
+| isOpen   | Panel or Trigger becomes fully controlled | Boolean | false   |
 
 ## Demo
 
@@ -55,11 +66,13 @@ Styling with styled-components or react predefined CSS classes, which repeats DO
 `yarn build` - run Rollup for compile production build  
 `yarn build-story` - build storybook
 
--[x] For build we are suing Rollup
+Made with:  
+https://github.com/toastyboost/storybook-starter  
+https://github.com/toastyboost/rollup-boilerplate
 
 ## TODO
 
-add tags to package.json  
 add css files with ready styles  
 add disable props  
-add controlled state
+link features and story book
+add gifs to most important features

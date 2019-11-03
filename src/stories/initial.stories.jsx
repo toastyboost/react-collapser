@@ -6,12 +6,16 @@ export default { title: 'Collapser' }
 
 export const Tab = () => {
   return (
-    <Ui>
+    <Ui
+      title="Collapser out of box"
+      description="Without any settings and multiple childrens collapser works like a tab"
+    >
       <Collapser>
         <Trigger>About dogs</Trigger>
         <Panel>
-          A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be
-          found as a welcome guest in many households across the world.
+          A dog is a type of domesticated animal. Known for its loyalty and
+          faithfulness, it can be found as a welcome guest in many households
+          across the world.
         </Panel>
       </Collapser>
     </Ui>
@@ -21,16 +25,20 @@ export const Tab = () => {
 export const Accordion = () => {
   return (
     <Ui>
-      <Collapser>
+      <Collapser
+        title="Collapser with childrens"
+        description="With multiple childrens collapser working like an accordion"
+      >
         <Trigger>About dogs</Trigger>
         <Panel>
-          A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be
-          found as a welcome guest in many households across the world.
+          A dog is a type of domesticated animal. Known for its loyalty and
+          faithfulness, it can be found as a welcome guest in many households
+          across the world.
         </Panel>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
-          Abyssinians are highly intelligent and intensely inquisitive. They love to investigate and
-          will leave no nook or cranny unexplored.
+          Abyssinians are highly intelligent and intensely inquisitive. They
+          love to investigate and will leave no nook or cranny unexplored.
         </Panel>
       </Collapser>
     </Ui>

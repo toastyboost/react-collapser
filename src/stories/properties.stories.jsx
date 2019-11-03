@@ -9,7 +9,10 @@ export default { title: 'Properties' }
 
 export const alwaysOpen = () => {
   return (
-    <Ui>
+    <Ui
+      title="Always opened panels"
+      description="Collapser have atleast one opened panel, by default with 0 index"
+    >
       <Collapser alwaysOpen>
         {dogs.map(({ dogName, dogText }, key) => (
           <React.Fragment key={key}>
@@ -24,7 +27,10 @@ export const alwaysOpen = () => {
 
 export const alwaysOpenWithNumber = () => {
   return (
-    <Ui>
+    <Ui
+      title="Always open with number"
+      description="You could use alwaysOpen feature and choose which panel will be opened by default"
+    >
       <Collapser alwaysOpen={1}>
         {dogs.map(({ dogName, dogText }) => (
           <>
@@ -51,10 +57,9 @@ export const openAll = () => {
   const [isAllOpen, toggle] = React.useState(false)
 
   return (
-    <Ui>
+    <Ui title="Open all" description="You could reveal all collapser childrens">
       <Switch onClick={() => toggle(!isAllOpen)} /> Open
-      <Divider />
-      <Collapser openAll={isAllOpen} alwaysOpen>
+      <Collapser openAll={isAllOpen}>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
           Abyssinians are highly intelligent and intensely inquisitive. They
@@ -77,15 +82,74 @@ export const openAll = () => {
   )
 }
 
+export const controlledChilds = () => {
+  const [isOpen, toggle] = React.useState(false)
+
+  return (
+    <Ui
+      title="Controlled childrens"
+      description="You could choose which collapser childrens will be controlled"
+    >
+      <Switch onClick={() => toggle(!isOpen)} /> Open
+      <Divider />
+      <Collapser>
+        <Trigger isOpen={isOpen}>Abyssinian Cat</Trigger>
+        <Panel isOpen={isOpen}>
+          Abyssinians are highly intelligent and intensely inquisitive. They
+          love to investigate and will leave no nook or cranny unexplored.
+        </Panel>
+        <Trigger>American Bobtail Cat Breed</Trigger>
+        <Panel>
+          Confident and friendly, the American Bobtail is a highly intelligent
+          breed with a clownlike personality. Looking much like a bobtailed
+          wildcat, this rare and athletic breed can be taught to walk on a
+          leash.
+        </Panel>
+      </Collapser>
+    </Ui>
+  )
+}
+
+export const controlledCollapser = () => {
+  const [isOpen, toggle] = React.useState(false)
+
+  return (
+    <Ui
+      title="Controlled collapser"
+      description="You could controll all collapser childs"
+    >
+      <Switch onClick={() => toggle(!isOpen)} /> Open
+      <Divider />
+      <Collapser isOpen={isOpen}>
+        <Trigger>Abyssinian Cat</Trigger>
+        <Panel>
+          Abyssinians are highly intelligent and intensely inquisitive. They
+          love to investigate and will leave no nook or cranny unexplored.
+        </Panel>
+        <Trigger>American Bobtail Cat Breed</Trigger>
+        <Panel>
+          Confident and friendly, the American Bobtail is a highly intelligent
+          breed with a clownlike personality. Looking much like a bobtailed
+          wildcat, this rare and athletic breed can be taught to walk on a
+          leash.
+        </Panel>
+      </Collapser>
+    </Ui>
+  )
+}
+
 export const animated = () => {
   return (
-    <Ui>
+    <Ui
+      title="Animated collapser"
+      description="You could use collapser animation out of box"
+    >
       <Collapser animated>
-        {dogs.map(({ dogName, dogText }) => (
-          <>
+        {dogs.map(({ dogName, dogText }, key) => (
+          <React.Fragment key={key}>
             <Trigger>{dogName}</Trigger>
             <Panel>{dogText}</Panel>
-          </>
+          </React.Fragment>
         ))}
       </Collapser>
     </Ui>

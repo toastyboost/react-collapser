@@ -6,6 +6,7 @@ import { Collapser, Trigger, Panel } from '@/components'
 import 'antd/dist/antd.css'
 
 export const StyledCollapser = styled(Collapser)`
+  margin-top: 12px;
   border-radius: 3px;
   color: #fff;
   overflow: hidden;
@@ -94,4 +95,12 @@ export const Container = styled.div`
       }
     }
   }
+`
+export const Title = styled.div`
+  width: 100%;
+`
+
+export const Desc = styled.div`
+  font-weight: 400;
+  font-size: 14px;
 `

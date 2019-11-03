@@ -4,9 +4,12 @@ import { Ui, dogs, cats } from '@/libs'
 
 export default { title: 'Inheritance' }
 
-export const defaut = () => {
+export const withChilds = () => {
   return (
-    <Ui>
+    <Ui
+      title="Deep inheritance"
+      description="Collapser inheritance with any childrens you want"
+    >
       <Collapser>
         <Trigger>About dogs</Trigger>
         <Panel>
@@ -14,8 +17,6 @@ export const defaut = () => {
           faithfulness, it can be found as a welcome guest in many households
           across the world.
         </Panel>
-      </Collapser>
-      <Collapser>
         <Trigger>About cats</Trigger>
         <Panel>
           Here more details:
@@ -41,25 +42,28 @@ export const defaut = () => {
   )
 }
 
-export const Mapping = () => {
+export const dataMapping = () => {
   return (
-    <Ui>
+    <Ui
+      title="Data Mapping"
+      description="Build collapser structure with arrays of data"
+    >
       <Collapser>
-        {dogs.map(({ dogName, dogText }) => (
-          <>
+        {dogs.map(({ dogName, dogText }, dogKey) => (
+          <React.Fragment key={dogKey}>
             <Trigger>{dogName}</Trigger>
             <Panel>
               {dogText}
               <Collapser>
-                {cats.map(({ catName, catText }) => (
-                  <>
+                {cats.map(({ catName, catText }, catKey) => (
+                  <React.Fragment key={catKey}>
                     <Trigger>{catName}</Trigger>
                     <Panel>{catText}</Panel>
-                  </>
+                  </React.Fragment>
                 ))}
               </Collapser>
             </Panel>
-          </>
+          </React.Fragment>
         ))}
       </Collapser>
     </Ui>

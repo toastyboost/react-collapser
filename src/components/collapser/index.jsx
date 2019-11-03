@@ -4,12 +4,13 @@ export const Ctx = React.createContext()
 
 export const Collapser = (props) => {
   const {
-    className = 'collapser',
     children,
+    className = 'collapser',
     alwaysOpen = false,
-    index = alwaysOpen ? 0 : -1,
+    index = typeof alwaysOpen === 'number' ? alwaysOpen : alwaysOpen ? 0 : -1,
     animated = false,
-    openAll = false
+    openAll = false,
+    isOpen = ''
   } = props
 
   const [activeIndex, setActiveIndex] = React.useState(index)
@@ -17,6 +18,8 @@ export const Collapser = (props) => {
   const classNames = [className].join(' ')
 
   const handleActive = (clickedIndex) => {
+    if (isOpen !== '') return false
+
     const isNumber = typeof alwaysOpen === 'number'
     const isEqual = clickedIndex === activeIndex
 
@@ -42,7 +45,8 @@ export const Collapser = (props) => {
           setActiveIndex,
           activeIndex,
           animated,
-          openAll
+          openAll,
+          isOpenContext: isOpen
         }}
       >
         {children.map((child, key) =>

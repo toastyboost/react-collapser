@@ -3,21 +3,28 @@ import * as React from 'react'
 import { Ctx } from '../collapser'
 
 export const Panel = (props) => {
-  const { className = 'collapser-panel', children, index } = props
+  const { activeIndex, animated, openAll, isOpenContext } = React.useContext(
+    Ctx
+  )
 
-  const { activeIndex, animated, openAll } = React.useContext(Ctx)
+  const {
+    className = 'collapser-panel',
+    children,
+    index,
+    isOpen = isOpenContext
+  } = props
 
-  const [isOpen, toggle] = React.useState(false)
+  const [isOpenState, toggle] = React.useState(isOpen)
 
   React.useEffect(() => {
     openAll && toggle(openAll)
   }, [openAll])
 
   React.useEffect(() => {
-    toggle(index === activeIndex)
-  }, [activeIndex])
+    toggle(isOpen || index === activeIndex)
+  }, [activeIndex, isOpen])
 
-  const classNames = [className, isOpen ? 'open' : 'closed'].join(' ')
+  const classNames = [className, isOpenState ? 'open' : 'closed'].join(' ')
 
   return (
     <div
@@ -26,8 +33,8 @@ export const Panel = (props) => {
         transition: animated
           ? 'all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)'
           : 0,
-        overflow: isOpen ? 'auto' : 'hidden',
-        maxHeight: isOpen ? 'initial' : 0
+        overflow: isOpenState ? 'auto' : 'hidden',
+        maxHeight: isOpenState ? 'initial' : 0
       }}
     >
       {children}

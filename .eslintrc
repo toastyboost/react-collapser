@@ -18,6 +18,7 @@
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "implicit-arrow-linebreak": "off",
@@ -28,6 +29,7 @@
     "react/no-array-index-key": "off",
     "no-confusing-arrow": "off",
     "indent": "off",
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+    "consistent-return": "off"
   }
 }

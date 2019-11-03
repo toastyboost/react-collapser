@@ -26,7 +26,8 @@ configureActions({
 
 addDecorator(
   withInfo({
-    header: true
+    header: true,
+    source: false
   })
 )
 
