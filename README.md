@@ -40,13 +40,13 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 
 ### Collapser
 
-| Property   | Description                                                    | Type    | Default |
-| ---------- | -------------------------------------------------------------- | ------- | ------- |
-| alwaysOpen | Collapser always have at least one opened panel                | Boolean | false   |
-| alwaysOpen | If props type of Number, Collapser shows Panel with this index | Number  | 0       |
-| animated   | Initiate default animation                                     | Boolean | false   |
-| openAll    | Reveal all closed panels in Collapser                          | Boolean | false   |
-| isOpen     | Collpaser becomes fully controlled                             | Boolean | false   |
+| Property   | Description                                      | Type    | Default |
+| ---------- | ------------------------------------------------ | ------- | ------- |
+| alwaysOpen | Collapser always have at least one opened panel  | Boolean | false   |
+| alwaysOpen | If Number, Collapser shows Panel with this index | Number  | 0       |
+| animated   | Initiate default animation                       | Boolean | false   |
+| openAll    | Reveal all closed panels in Collapser            | Boolean | false   |
+| isOpen     | Collpaser becomes fully controlled               | Boolean | false   |
 
 ### Trigger / Panel
 
@@ -57,8 +57,6 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 ## Demo
 
 ![react-collapser demo](https://toastyboost.github.io/upload/react-collapser-demo.gif)
-
-Styling with styled-components or react predefined CSS classes, which repeats DOM structure and states.
 
 ## Development
 

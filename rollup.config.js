@@ -46,7 +46,9 @@ export default {
     resolve({
       extensions: ['.js', '.jsx', '.json']
     }),
-    commonjs(),
+    commonjs({
+      sourcemap: false
+    }),
     production && terser()
   ]
 }
