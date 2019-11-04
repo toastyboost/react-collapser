@@ -29,16 +29,16 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 
 ## Why
 
-Average of most popular accordion packages are between 6.9 - 44.3kb (minified).  
+Average size of most popular accordion packages are between 6.9 - 44.3kb (minified).  
 Most of their features are not in demand. Time to improve it.
 
 ## Features
 
-- [x] [Working out of the box](http://localhost:7000/?path=/story/collapser--accordion)
-- [x] [Controlled/Uncontrolled by demand](http://localhost:7000/?path=/story/properties--controlled-collapser)
+- [x] [Working out of the box](https://toastyboost.github.io/react-collapser/?path=/story/collapser--accordion)
+- [x] [Controlled/Uncontrolled by demand](https://toastyboost.github.io/react-collapser/?path=/story/properties--controlled-collapser)
 - [x] [Unlimited nesting](https://toastyboost.github.io/react-collapser/?path=/story/inheritance--defaut)
 - [x] Only useful properties
-- [x] [Unlimited styling in a way you need](http://localhost:7000/?path=/story/styling--styled-components)
+- [x] [Unlimited styling in a way you need](https://toastyboost.github.io/react-collapser/?path=/story/styling--styled-components)
 - [x] SSR friendly
 - [x] Zero dependencies
 
