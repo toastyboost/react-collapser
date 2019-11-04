@@ -7,7 +7,7 @@ export default { title: 'Collapser' }
 export const Tab = () => {
   return (
     <Ui
-      title="Collapser out of box"
+      title="Tab out of box"
       description="Without any settings and multiple childrens collapser works like a tab"
     >
       <Collapser>
@@ -24,7 +24,10 @@ export const Tab = () => {
 
 export const Accordion = () => {
   return (
-    <Ui>
+    <Ui
+      title="Accordion out of box"
+      description="Without any settings and multiple childrens collapser works like a tab"
+    >
       <Collapser
         title="Collapser with childrens"
         description="With multiple childrens collapser working like an accordion"

@@ -14,7 +14,8 @@ export const Trigger = (props) => {
     className = 'collapser-trigger',
     children,
     index,
-    isOpen = isOpenContext
+    isOpen = isOpenContext,
+    disabled = false
   } = props
 
   const [isOpenState, toggle] = React.useState(isOpen)
@@ -27,13 +28,17 @@ export const Trigger = (props) => {
     toggle(isOpen || index === activeIndex)
   }, [activeIndex, isOpen])
 
-  const classNames = [className, isOpenState ? 'open' : 'closed'].join(' ')
+  const classNames = [
+    className,
+    isOpenState ? 'open' : 'closed',
+    disabled ? 'disabled' : ''
+  ].join(' ')
 
   return (
     <div
-      onClick={() => handleActive(index)}
+      onClick={() => !disabled && handleActive(index)}
       className={classNames}
-      style={{ cursor: 'pointer' }}
+      style={{ pointerEvents: disabled && 'none' }}
     >
       {children}
     </div>

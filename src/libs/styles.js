@@ -15,6 +15,7 @@ export const StyledTrigger = styled(Trigger)`
   background-color: #845ec2;
   padding: 12px 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 `
 export const StyledPanel = styled(Panel)`
   background-color: #ff6f91;
@@ -22,6 +23,34 @@ export const StyledPanel = styled(Panel)`
 
   &.open {
     padding: 16px;
+  }
+
+  &.disabled {
+    cursor: auto;
+  }
+`
+
+export const ShowMore = styled(Trigger)`
+  background-color: #ececec;
+  display: inline-block;
+  margin: 12px 0;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+`
+
+export const ArticleContainer = styled.div`
+  background: #ececec;
+  padding: 32px 32px 32px 32px;
+  display: flex;
+  width: 100%;
+
+  .ant-card {
+    width: 100%;
+  }
+
+  .ant-card-body {
+    padding-top: 12px;
   }
 `
 
@@ -56,6 +85,7 @@ export const Container = styled.div`
       line-height: 22px;
       border-bottom: 1px solid #d9d9d9;
       transition: 0.3s;
+      cursor: pointer;
 
       &:hover {
         color: rgba(0, 0, 0, 1);
@@ -80,6 +110,11 @@ export const Container = styled.div`
           transform: rotate(45deg);
           left: 0;
         }
+      }
+
+      &.disabled {
+        opacity: 0.4;
+        cursor: auto;
       }
     }
 

@@ -4,7 +4,7 @@ import { Ui, dogs, cats } from '@/libs'
 
 export default { title: 'Inheritance' }
 
-export const withChilds = () => {
+export const unlimitedChilds = () => {
   return (
     <Ui
       title="Deep inheritance"
@@ -23,8 +23,14 @@ export const withChilds = () => {
           <Collapser>
             <Trigger>Abyssinian Cat</Trigger>
             <Panel>
-              Abyssinians are highly intelligent and intensely inquisitive. They
-              love to investigate and will leave no nook or cranny unexplored.
+              <Collapser>
+                {cats.map(({ catName, catText }, catKey) => (
+                  <React.Fragment key={catKey}>
+                    <Trigger>{catName}</Trigger>
+                    <Panel>{catText}</Panel>
+                  </React.Fragment>
+                ))}
+              </Collapser>
             </Panel>
           </Collapser>
           <Collapser>
@@ -63,6 +69,34 @@ export const dataMapping = () => {
                 ))}
               </Collapser>
             </Panel>
+          </React.Fragment>
+        ))}
+      </Collapser>
+    </Ui>
+  )
+}
+
+export const Reversed = () => {
+  return (
+    <Ui
+      title="Data Mapping"
+      description="Build collapser structure with arrays of data"
+    >
+      <Collapser>
+        {dogs.map(({ dogName, dogText }, dogKey) => (
+          <React.Fragment key={dogKey}>
+            <Panel>
+              {dogText}
+              <Collapser>
+                {cats.map(({ catName, catText }, catKey) => (
+                  <React.Fragment key={catKey}>
+                    <Panel>{catText}</Panel>
+                    <Trigger>{catName}</Trigger>
+                  </React.Fragment>
+                ))}
+              </Collapser>
+            </Panel>
+            <Trigger>{dogName}</Trigger>
           </React.Fragment>
         ))}
       </Collapser>

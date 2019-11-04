@@ -10,7 +10,8 @@ export const Collapser = (props) => {
     index = typeof alwaysOpen === 'number' ? alwaysOpen : alwaysOpen ? 0 : -1,
     animated = false,
     openAll = false,
-    isOpen = ''
+    isOpen = '',
+    disabled = false
   } = props
 
   const [activeIndex, setActiveIndex] = React.useState(index)
@@ -18,7 +19,7 @@ export const Collapser = (props) => {
   const classNames = [className].join(' ')
 
   const handleActive = (clickedIndex) => {
-    if (isOpen !== '') return false
+    if (isOpen !== '' || disabled) return false
 
     const isNumber = typeof alwaysOpen === 'number'
     const isEqual = clickedIndex === activeIndex
@@ -49,13 +50,16 @@ export const Collapser = (props) => {
           isOpenContext: isOpen
         }}
       >
-        {children.map((child, key) =>
-          child.type.toString() === 'Symbol(react.fragment)'
-            ? child.props.children.map((item, childKey) =>
-                cloneChildren(item, key, childKey, true)
-              )
-            : cloneChildren(child, key)
-        )}
+        {children.map((child, key) => {
+          if (child.type) {
+            return child.type.toString() === 'Symbol(react.fragment)'
+              ? child.props.children.map((item, childKey) =>
+                  cloneChildren(item, key, childKey, true)
+                )
+              : cloneChildren(child, key)
+          }
+          return child
+        })}
       </Ctx.Provider>
     </div>
   )

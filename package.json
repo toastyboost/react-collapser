@@ -1,6 +1,6 @@
 {
   "name": "react-collapser",
-  "description": "🏄‍ Basic, fast and lightweight React collapse component for your App. Fully controlled, zero dependencies, works out of the box and a lot of other features",
+  "description": "🏄‍ Fully controlled • zero dependencies • works out of the box • other features",
   "version": "1.2.5",
   "main": "./dist/index",
   "author": "https://github.com/toastyboost",

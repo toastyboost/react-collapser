@@ -138,6 +138,38 @@ export const controlledCollapser = () => {
   )
 }
 
+export const disabled = () => {
+  const [isDisabled, toggle] = React.useState(true)
+  return (
+    <Ui
+      title="Disable"
+      description="You could use collapser animation out of box"
+    >
+      <Switch onClick={() => toggle(!isDisabled)} defaultChecked /> Disabled
+      <Divider />
+      <Collapser animated alwaysOpen={4}>
+        <Trigger disabled={isDisabled}>Abyssinian Cat</Trigger>
+        <Panel>
+          Abyssinians are highly intelligent and intensely inquisitive. They
+          love to investigate and will leave no nook or cranny unexplored.
+        </Panel>
+        <Trigger>American Bobtail Cat Breed</Trigger>
+        <Panel>
+          Confident and friendly, the American Bobtail is a highly intelligent
+          breed with a clownlike personality. Looking much like a bobtailed
+          wildcat, this rare and athletic breed can be taught to walk on a
+          leash.
+        </Panel>
+        <Trigger>American Bobtail Cat Breed</Trigger>
+        <Panel>
+          Abyssinians are highly intelligent and intensely inquisitive. They
+          love to investigate and will leave no nook or cranny unexplored.
+        </Panel>
+      </Collapser>
+    </Ui>
+  )
+}
+
 export const animated = () => {
   return (
     <Ui
