@@ -29,7 +29,8 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 
 ## Why
 
-Average of most popular accordion packages are between 6.9 - 44.3kb (minified). Most of their features are not in demand. Time to improve it.
+Average of most popular accordion packages are between 6.9 - 44.3kb (minified).  
+Most of their features are not in demand. Time to improve it.
 
 ## Features
 
