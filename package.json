@@ -1,8 +1,9 @@
 {
   "name": "react-collapser",
   "description": "🏄‍ fully controlled • zero dependencies • works out of the box • other features",
-  "version": "1.2.9",
-  "main": "./dist/index",
+  "version": "1.2.14",
+  "main": "./dist/index.js",
+  "module": "./dist/common.js",
   "author": "https://github.com/toastyboost",
   "repository": "https://github.com/toastyboost/react-collapser",
   "homepage": "https://toastyboost.github.io/react-collapser",

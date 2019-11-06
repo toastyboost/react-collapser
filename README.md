@@ -30,7 +30,7 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 In case when you need default design:
 
 ```
-import 'react-collapser/default-styles.css'
+import 'react-collapser/dist/default-styles.css'
 ```
 
 ## Why
@@ -49,26 +49,26 @@ Most of their features are not in demand. Time to improve it.
 - [x] SSR friendly
 - [x] Zero dependencies
 
-# API
+## API
 
-## Collapser
+### Collapser
 
-| Property   | Description                                                 | Type    | Default |
-| ---------- | ----------------------------------------------------------- | ------- | ------- |
-| alwaysOpen | Collapser always have one opened panel, 0 by default        | Boolean | false   |
-| alwaysOpen | Collapser always have one opened panel, {number} by default | Number  | 0       |
-| animated   | Initiate default animation                                  | Boolean | false   |
-| openAll    | Reveal once all closed panels in Collapser                  | Boolean | false   |
-| isOpen     | Collpaser becomes fully controlled                          | Boolean | false   |
-| disabled   | Disable whole collapser                                     | Boolean | false   |
+| Property   | Description                                      | Type    | Default |
+| ---------- | ------------------------------------------------ | ------- | ------- |
+| alwaysOpen | Collapser have one opened panel, 0 by default    | Boolean | false   |
+| alwaysOpen | Collapser have one opened panel, prop by default | Number  | 0       |
+| animated   | Initiate default animation                       | Boolean | false   |
+| openAll    | Reveal once all closed panels in Collapser       | Boolean | false   |
+| isOpen     | Collpaser becomes fully controlled               | Boolean | false   |
+| disabled   | Disable whole collapser                          | Boolean | false   |
 
-## Trigger / Panel
+### Trigger / Panel
 
 | Property | Description                                         | Type    | Default |
 | -------- | --------------------------------------------------- | ------- | ------- |
 | isOpen   | Panel or Trigger component becomes fully controlled | Boolean | false   |
 
-## Trigger
+### Trigger
 
 | Property | Description                                        | Type    | Default |
 | -------- | -------------------------------------------------- | ------- | ------- |
