@@ -54,14 +54,15 @@ Most of their features are not in demand. Time to improve it.
 ### Collapser
 
 &nbsp;
-| Property | Description | Type | Default |
-| ---------- | -------------------------------------------------------- | ------- | ------- |
-| alwaysOpen | Collapser always have one opened panel, 0 by default | Boolean | false |
-| alwaysOpen | Collapser always have one opened panel, with this index by default | Number | 0 |
-| animated | Initiate default animation | Boolean | false |
-| openAll | Reveal once all closed panels in Collapser | Boolean | false |
-| isOpen | Collpaser becomes fully controlled | Boolean | false |
-| disabled | Disable whole collapser | Boolean | false |
+
+| Property   | Description                                                 | Type    | Default |
+| ---------- | ----------------------------------------------------------- | ------- | ------- |
+| alwaysOpen | Collapser always have one opened panel, 0 by default        | Boolean | false   |
+| alwaysOpen | Collapser always have one opened panel, {number} by default | Number  | 0       |
+| animated   | Initiate default animation                                  | Boolean | false   |
+| openAll    | Reveal once all closed panels in Collapser                  | Boolean | false   |
+| isOpen     | Collpaser becomes fully controlled                          | Boolean | false   |
+| disabled   | Disable whole collapser                                     | Boolean | false   |
 
 ### Trigger / Panel
 
