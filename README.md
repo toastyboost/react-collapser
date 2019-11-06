@@ -49,11 +49,9 @@ Most of their features are not in demand. Time to improve it.
 - [x] SSR friendly
 - [x] Zero dependencies
 
-## API
+# API
 
-### Collapser
-
-&nbsp;
+## Collapser
 
 | Property   | Description                                                 | Type    | Default |
 | ---------- | ----------------------------------------------------------- | ------- | ------- |
@@ -64,13 +62,13 @@ Most of their features are not in demand. Time to improve it.
 | isOpen     | Collpaser becomes fully controlled                          | Boolean | false   |
 | disabled   | Disable whole collapser                                     | Boolean | false   |
 
-### Trigger / Panel
+## Trigger / Panel
 
 | Property | Description                                         | Type    | Default |
 | -------- | --------------------------------------------------- | ------- | ------- |
 | isOpen   | Panel or Trigger component becomes fully controlled | Boolean | false   |
 
-### Trigger
+## Trigger
 
 | Property | Description                                        | Type    | Default |
 | -------- | -------------------------------------------------- | ------- | ------- |
