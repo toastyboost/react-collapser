@@ -1,7 +1,7 @@
 {
   "name": "react-collapser",
   "description": "🏄‍ fully controlled • zero dependencies • works out of the box • other features",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "main": "./dist/index",
   "author": "https://github.com/toastyboost",
   "repository": "https://github.com/toastyboost/react-collapser",
@@ -56,6 +56,7 @@
   "keywords": [
     "react",
     "component",
+    "react-accordion",
     "accordion",
     "collapse",
     "collapsible",

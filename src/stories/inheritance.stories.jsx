@@ -75,31 +75,3 @@ export const dataMapping = () => {
     </Ui>
   )
 }
-
-export const Reversed = () => {
-  return (
-    <Ui
-      title="Data Mapping"
-      description="Build collapser structure with arrays of data"
-    >
-      <Collapser>
-        {dogs.map(({ dogName, dogText }, dogKey) => (
-          <React.Fragment key={dogKey}>
-            <Panel>
-              {dogText}
-              <Collapser>
-                {cats.map(({ catName, catText }, catKey) => (
-                  <React.Fragment key={catKey}>
-                    <Panel>{catText}</Panel>
-                    <Trigger>{catName}</Trigger>
-                  </React.Fragment>
-                ))}
-              </Collapser>
-            </Panel>
-            <Trigger>{dogName}</Trigger>
-          </React.Fragment>
-        ))}
-      </Collapser>
-    </Ui>
-  )
-}

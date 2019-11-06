@@ -5,26 +5,33 @@ import { Card } from 'antd'
 import { Container, Title, Desc, ArticleContainer } from './styles'
 
 export const Ui = ({ children, title, description, type }) => {
-  const Content = () => (
-    <Card
-      title={
-        <>
-          <Title>{title}</Title>
-          <Desc>{description}</Desc>
-        </>
-      }
-      bordered={false}
-    >
-      {children}
-    </Card>
-  )
-  return type === 'article' ? (
+  return type === 'nowrap' ? (
     <ArticleContainer>
-      <Content />
+      <Card
+        title={
+          <>
+            <Title>{title}</Title>
+            <Desc>{description}</Desc>
+          </>
+        }
+        bordered={false}
+      >
+        {children}
+      </Card>
     </ArticleContainer>
   ) : (
     <Container>
-      <Content />
+      <Card
+        title={
+          <>
+            <Title>{title}</Title>
+            <Desc>{description}</Desc>
+          </>
+        }
+        bordered={false}
+      >
+        {children}
+      </Card>
     </Container>
   )
 }

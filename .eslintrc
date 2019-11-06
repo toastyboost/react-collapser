@@ -4,7 +4,11 @@
   "plugins": ["jsx-a11y", "import", "prettier"],
   "settings": {
     "import/resolver": {
-      "alias": [["@/components", "./src/components"], ["@/libs", "./src/libs"]],
+      "alias": [
+        ["@/components", "./src/components"],
+        ["@/libs", "./src/libs"],
+        ["@/styles", "./src/styles"]
+      ],
       "node": {
         "paths": ["src"]
       }

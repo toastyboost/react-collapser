@@ -25,28 +25,28 @@ export const alwaysOpen = () => {
   )
 }
 
-export const alwaysOpenWithNumber = () => {
+export const alwaysOpenWithDefault = () => {
   return (
     <Ui
-      title="Always open with number"
+      title="Always open with default index"
       description="You could use alwaysOpen feature and choose which panel will be opened by default"
     >
       <Collapser alwaysOpen={1}>
-        {dogs.map(({ dogName, dogText }) => (
-          <>
+        {dogs.map(({ dogName, dogText }, dogKey) => (
+          <React.Fragment key={dogKey}>
             <Trigger>{dogName}</Trigger>
             <Panel>
               {dogText}
               <Collapser>
-                {cats.map(({ catName, catText }) => (
-                  <>
+                {cats.map(({ catName, catText }, catsKey) => (
+                  <React.Fragment key={catsKey}>
                     <Trigger>{catName}</Trigger>
                     <Panel>{catText}</Panel>
-                  </>
+                  </React.Fragment>
                 ))}
               </Collapser>
             </Panel>
-          </>
+          </React.Fragment>
         ))}
       </Collapser>
     </Ui>
@@ -58,7 +58,8 @@ export const openAll = () => {
 
   return (
     <Ui title="Open all" description="You could reveal all collapser childrens">
-      <Switch onClick={() => toggle(!isAllOpen)} /> Open
+      <Switch onClick={() => toggle(!isAllOpen)} defaultChecked={isAllOpen} />
+      Open
       <Collapser openAll={isAllOpen}>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>

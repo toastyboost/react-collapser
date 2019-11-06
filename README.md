@@ -27,6 +27,12 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 </Collapser>
 ```
 
+In case when you need default design:
+
+```
+import 'react-collapser/default-styles.css'
+```
+
 ## Why
 
 Average size of most popular accordion packages are between 6.9 - 44.3kb (minified).  
@@ -39,6 +45,7 @@ Most of their features are not in demand. Time to improve it.
 - [x] [Unlimited nesting](https://toastyboost.github.io/react-collapser/?path=/story/inheritance--defaut)
 - [x] Only useful properties
 - [x] [Unlimited styling in a way you need](https://toastyboost.github.io/react-collapser/?path=/story/styling--styled-components)
+- [x] Default styles in external .css file
 - [x] SSR friendly
 - [x] Zero dependencies
 
@@ -46,30 +53,29 @@ Most of their features are not in demand. Time to improve it.
 
 ### Collapser
 
-| Property   | Description                                              | Type    | Default |
+&nbsp;
+| Property | Description | Type | Default |
 | ---------- | -------------------------------------------------------- | ------- | ------- |
-| alwaysOpen | Collapser always have at least one opened panel          | Boolean | false   |
-| alwaysOpen | Collapser shows Panel (child) with this index by default | Number  | 0       |
-| animated   | Initiate default animation                               | Boolean | false   |
-| openAll    | Reveal once all closed panels in Collapser               | Boolean | false   |
-| isOpen     | Collpaser becomes fully controlled                       | Boolean | false   |
-| disabled   | Disable whole collapser                                  | Boolean | false   |
+| alwaysOpen | Collapser always have one opened panel, 0 by default | Boolean | false |
+| alwaysOpen | Collapser always have one opened panel, with this index by default | Number | 0 |
+| animated | Initiate default animation | Boolean | false |
+| openAll | Reveal once all closed panels in Collapser | Boolean | false |
+| isOpen | Collpaser becomes fully controlled | Boolean | false |
+| disabled | Disable whole collapser | Boolean | false |
 
 ### Trigger / Panel
 
-| Property | Description                               | Type    | Default |
-| -------- | ----------------------------------------- | ------- | ------- |
-| isOpen   | Panel or Trigger becomes fully controlled | Boolean | false   |
+| Property | Description                                         | Type    | Default |
+| -------- | --------------------------------------------------- | ------- | ------- |
+| isOpen   | Panel or Trigger component becomes fully controlled | Boolean | false   |
 
 ### Trigger
 
-| Property | Description                      | Type    | Default |
-| -------- | -------------------------------- | ------- | ------- |
-| disabled | Disable trigger and linked panel | Boolean | false   |
+| Property | Description                                        | Type    | Default |
+| -------- | -------------------------------------------------- | ------- | ------- |
+| disabled | Disable Trigger and linked to this Panel component | Boolean | false   |
 
-## Example
-
-![react-collapser demo](https://toastyboost.github.io/upload/react-collapser-demo.gif)
+&nbsp;
 
 ## Development
 
@@ -82,11 +88,14 @@ Made with:
 https://github.com/toastyboost/storybook-starter  
 https://github.com/toastyboost/rollup-boilerplate
 
+## Examples
+
+![react-collapser demo](https://toastyboost.github.io/upload/react-collapser-demo.gif)
+
 ## TODO
 
 - [ ] add tests
 - [ ] add typescript
-- [ ] add css files with ready styles
 - [ ] resolve case with childs between trigger and panel
 - [ ] add disable props
 - [ ] link features and story book

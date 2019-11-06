@@ -1,14 +1,8 @@
 import * as React from 'react'
-import { Collapser, Panel } from '@/components'
+import { Collapser, Trigger, Panel } from '@/components'
 
-import {
-  StyledCollapser,
-  StyledTrigger,
-  StyledPanel,
-  ShowMore,
-  dogs,
-  Ui
-} from '@/libs'
+import { StyledCollapser, StyledTrigger, StyledPanel, dogs, Ui } from '@/libs'
+import '@/styles/default-styles.css'
 
 export default { title: 'Styling' }
 
@@ -27,20 +21,20 @@ export const styledComponents = () => {
   )
 }
 
-export const CombineStyling = () => {
+export const externalStyles = () => {
   return (
-    <Ui title="Article style" description="With custom trigger" type="article">
-      A dog is a type of domesticated animal. Known for its loyalty and
-      faithfulness, it can be found as a welcome guest in many households across
-      the world.
+    <Ui
+      title="Styling"
+      description="With external collapser-styles.css from /dist"
+      type="nowrap"
+    >
       <Collapser>
-        <ShowMore>Read more about Bobtail</ShowMore>
-        <Panel>
-          Confident and friendly, the American Bobtail is a highly intelligent
-          breed with a clownlike personality. Looking much like a bobtailed
-          wildcat, this rare and athletic breed can be taught to walk on a
-          leash.
-        </Panel>
+        {dogs.map(({ dogName, dogText }, key) => (
+          <React.Fragment key={key}>
+            <Trigger>{dogName}</Trigger>
+            <Panel>{dogText}</Panel>
+          </React.Fragment>
+        ))}
       </Collapser>
     </Ui>
   )
