@@ -56,11 +56,11 @@
   },
   "keywords": [
     "react",
-    "component",
-    "react-accordion",
     "accordion",
     "collapse",
     "collapsible",
+    "react-accordion",
+    "component",
     "tabs"
   ],
   "license": "MIT",

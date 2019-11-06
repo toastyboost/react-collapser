@@ -46,42 +46,42 @@ Most of their features are not in demand. Time to improve it.
 - [x] Only useful properties
 - [x] [Unlimited styling in a way you need](https://toastyboost.github.io/react-collapser/?path=/story/styling--styled-components)
 - [x] Default styles in external .css file
-- [x] SSR friendly
+- [x] SSR friendly, tested by Gatsby
 - [x] Zero dependencies
 
 ## API
 
 ### Collapser
 
-| Property   | Description                                      | Type    | Default |
-| ---------- | ------------------------------------------------ | ------- | ------- |
-| alwaysOpen | Collapser have one opened panel, 0 by default    | Boolean | false   |
-| alwaysOpen | Collapser have one opened panel, prop by default | Number  | 0       |
-| animated   | Initiate default animation                       | Boolean | false   |
-| openAll    | Reveal once all closed panels in Collapser       | Boolean | false   |
-| isOpen     | Collpaser becomes fully controlled               | Boolean | false   |
-| disabled   | Disable whole collapser                          | Boolean | false   |
+| Property   | Description                                                                              | Type    | Default |
+| ---------- | ---------------------------------------------------------------------------------------- | ------- | ------- |
+| alwaysOpen | Collapser have one always opened panel, 0 by default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
+| alwaysOpen | Collapser have one always opened panel, prop number                                      | Number  | 0       |
+| animated   | Initiate default animation                                                               | Boolean | false   |
+| openAll    | Reveal once all closed panels in Collapser                                               | Boolean | false   |
+| isOpen     | Collpaser becomes fully controlled                                                       | Boolean | false   |
+| disabled   | Disable whole collapser                                                                  | Boolean | false   |
 
 ### Trigger / Panel
 
-| Property | Description                                         | Type    | Default |
-| -------- | --------------------------------------------------- | ------- | ------- |
-| isOpen   | Panel or Trigger component becomes fully controlled | Boolean | false   |
+| Property | Description                                                                                                                             | Type    | Default |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
+| isOpen   | Panel or Trigger component becomes fully controlled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
 
 ### Trigger
 
-| Property | Description                                        | Type    | Default |
-| -------- | -------------------------------------------------- | ------- | ------- |
-| disabled | Disable Trigger and linked to this Panel component | Boolean | false   |
+| Property | Description                                                                                                                                                    | Type    | Default |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
+| disabled | Disable Trigger and linked to this Panel component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
 
-&nbsp;
+---
 
 ## Development
 
-`yarn start` - run storybook for development on `http://localhost:7000`
+`yarn start` - run Storybook for development on `http://localhost:7000`
 
-`yarn build` - run Rollup for compile production build  
-`yarn build-story` - build storybook
+`yarn build` - run Rollup to compile production build  
+`yarn build-story` - build Storybook for development
 
 Made with:  
 https://github.com/toastyboost/storybook-starter  
@@ -91,6 +91,8 @@ https://github.com/toastyboost/rollup-boilerplate
 
 ![react-collapser demo](https://toastyboost.github.io/upload/react-collapser-demo.gif)
 
+All examples on [storybook](https://toastyboost.github.io/react-collapser)
+
 ## TODO
 
 - [ ] add tests
@@ -99,3 +101,5 @@ https://github.com/toastyboost/rollup-boilerplate
 - [ ] add disable props
 - [ ] link features and story book
 - [ ] add gifs to most important features
+- [ ] add star motivation
+- [ ] made with latest react, functional components, react hooks
