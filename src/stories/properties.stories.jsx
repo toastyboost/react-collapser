@@ -53,14 +53,14 @@ export const alwaysOpenWithDefault = () => {
   )
 }
 
-export const openAll = () => {
+export const revealAll = () => {
   const [isAllOpen, toggle] = React.useState(false)
 
   return (
     <Ui title="Open all" description="You could reveal all collapser childrens">
       <Switch onClick={() => toggle(!isAllOpen)} defaultChecked={isAllOpen} />
-      Open
-      <Collapser openAll={isAllOpen}>
+      Controlled
+      <Collapser revealed={isAllOpen}>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
           Abyssinians are highly intelligent and intensely inquisitive. They
@@ -77,34 +77,6 @@ export const openAll = () => {
         <Panel>
           Abyssinians are highly intelligent and intensely inquisitive. They
           love to investigate and will leave no nook or cranny unexplored.
-        </Panel>
-      </Collapser>
-    </Ui>
-  )
-}
-
-export const controlledChilds = () => {
-  const [isOpen, toggle] = React.useState(false)
-
-  return (
-    <Ui
-      title="Controlled childrens"
-      description="You could choose which collapser childrens will be controlled"
-    >
-      <Switch onClick={() => toggle(!isOpen)} /> Open
-      <Divider />
-      <Collapser>
-        <Trigger isOpen={isOpen}>Abyssinian Cat</Trigger>
-        <Panel isOpen={isOpen}>
-          Abyssinians are highly intelligent and intensely inquisitive. They
-          love to investigate and will leave no nook or cranny unexplored.
-        </Panel>
-        <Trigger>American Bobtail Cat Breed</Trigger>
-        <Panel>
-          Confident and friendly, the American Bobtail is a highly intelligent
-          breed with a clownlike personality. Looking much like a bobtailed
-          wildcat, this rare and athletic breed can be taught to walk on a
-          leash.
         </Panel>
       </Collapser>
     </Ui>
@@ -112,18 +84,46 @@ export const controlledChilds = () => {
 }
 
 export const controlledCollapser = () => {
-  const [isOpen, toggle] = React.useState(false)
+  const [isOpen, controlledToggle] = React.useState(false)
 
   return (
     <Ui
       title="Controlled collapser"
       description="You could controll all collapser childs"
     >
-      <Switch onClick={() => toggle(!isOpen)} /> Open
+      <Switch onClick={() => controlledToggle(!isOpen)} /> Controlled
       <Divider />
-      <Collapser isOpen={isOpen}>
+      <Collapser controlled={isOpen}>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
+          Abyssinians are highly intelligent and intensely inquisitive. They
+          love to investigate and will leave no nook or cranny unexplored.
+        </Panel>
+        <Trigger>American Bobtail Cat Breed</Trigger>
+        <Panel>
+          Confident and friendly, the American Bobtail is a highly intelligent
+          breed with a clownlike personality. Looking much like a bobtailed
+          wildcat, this rare and athletic breed can be taught to walk on a
+          leash.
+        </Panel>
+      </Collapser>
+    </Ui>
+  )
+}
+
+export const controlledChild = () => {
+  const [isOpen, toggle] = React.useState(false)
+
+  return (
+    <Ui
+      title="Controlled childrens"
+      description="You could choose which collapser childrens will be controlled"
+    >
+      <Switch onClick={() => toggle(!isOpen)} /> Controlled 1-st child
+      <Divider />
+      <Collapser>
+        <Trigger controlled={isOpen}>Abyssinian Cat</Trigger>
+        <Panel controlled={isOpen}>
           Abyssinians are highly intelligent and intensely inquisitive. They
           love to investigate and will leave no nook or cranny unexplored.
         </Panel>
@@ -148,7 +148,7 @@ export const disabled = () => {
     >
       <Switch onClick={() => toggle(!isDisabled)} defaultChecked /> Disabled
       <Divider />
-      <Collapser animated alwaysOpen={4}>
+      <Collapser animated>
         <Trigger disabled={isDisabled}>Abyssinian Cat</Trigger>
         <Panel>
           Abyssinians are highly intelligent and intensely inquisitive. They

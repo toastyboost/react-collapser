@@ -1,7 +1,8 @@
-# 🏄‍ React-Collapser
+# 🏄 React-Collapser
 
 Easy, fast and lightweight React collapse component for your `<App />`  
 Fully controlled, zero dependencies, works out of the box, has advanced features.
+Made with functional components, hooks and latest React.
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=minified) [![Build Status](https://travis-ci.org/toastyboost/react-collapser.svg?branch=master)](https://travis-ci.org/toastyboost/react-collapser) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=dependencies) &nbsp; [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
 
@@ -9,6 +10,7 @@ Fully controlled, zero dependencies, works out of the box, has advanced features
 
 ```
 yarn add react-collapser
+npm i react-collapser
 ```
 
 ## Usage
@@ -27,7 +29,7 @@ import { Collapser, Trigger, Panel } from 'react-collapser'
 </Collapser>
 ```
 
-In case when you need default design:
+If you need default styles for collapser:
 
 ```
 import 'react-collapser/dist/default-styles.css'
@@ -36,7 +38,7 @@ import 'react-collapser/dist/default-styles.css'
 ## Why
 
 Average size of most popular accordion packages are between 6.9 - 44.3kb (minified).  
-Most of their features are not in demand. Time to improve it.
+Most of their features are not in demand. Made on classes.
 
 ## Features
 
@@ -47,6 +49,7 @@ Most of their features are not in demand. Time to improve it.
 - [x] [Unlimited styling in a way you need](https://toastyboost.github.io/react-collapser/?path=/story/styling--styled-components)
 - [x] Default styles in external .css file
 - [x] SSR friendly, tested by Gatsby
+- [x] Basic WAI-ARIA atributes for accessibility
 - [x] Zero dependencies
 
 ## API
@@ -57,22 +60,17 @@ Most of their features are not in demand. Time to improve it.
 | ---------- | ---------------------------------------------------------------------------------------- | ------- | ------- |
 | alwaysOpen | Collapser have one always opened panel, 0 by default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
 | alwaysOpen | Collapser have one always opened panel, prop number                                      | Number  | 0       |
+| reveal     | Reveal all nested panels and triggers                                                    | Boolean | false   |
+| controlled | Collpaser becomes fully controlled by this prop                                          | Boolean | false   |
 | animated   | Initiate default animation                                                               | Boolean | false   |
-| openAll    | Reveal once all closed panels in Collapser                                               | Boolean | false   |
-| isOpen     | Collpaser becomes fully controlled                                                       | Boolean | false   |
 | disabled   | Disable whole collapser                                                                  | Boolean | false   |
 
 ### Trigger / Panel
 
-| Property | Description                                                                                                                             | Type    | Default |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| isOpen   | Panel or Trigger component becomes fully controlled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
-
-### Trigger
-
-| Property | Description                                                                                                                                                    | Type    | Default |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| disabled | Disable Trigger and linked to this Panel component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
+| Property   | Description                                                                                                                                                    | Type    | Default |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
+| controlled | Panel or Trigger component becomes fully controlled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        | Boolean | false   |
+| disabled   | Disable Trigger and linked to this Panel component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
 
 ---
 
@@ -102,4 +100,3 @@ All examples on [storybook](https://toastyboost.github.io/react-collapser)
 - [ ] link features and story book
 - [ ] add gifs to most important features
 - [ ] add star motivation
-- [ ] made with latest react, functional components, react hooks

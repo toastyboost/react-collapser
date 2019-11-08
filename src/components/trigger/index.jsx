@@ -1,45 +1,27 @@
 import * as React from 'react'
 
-import { Ctx } from '../collapser'
-
 export const Trigger = (props) => {
   const {
     handleActive,
-    activeIndex,
-    openAll,
-    isOpenContext
-  } = React.useContext(Ctx)
-
-  const {
-    className = 'collapser-trigger',
+    className = 'collapse-trigger',
     children,
     index,
-    isOpen = isOpenContext,
-    disabled = false
+    isOpen,
+    disabled = false,
+    controlled
   } = props
 
-  const [isOpenState, toggle] = React.useState(isOpen)
-
-  React.useEffect(() => {
-    openAll && toggle(openAll)
-  }, [openAll])
-
-  React.useEffect(() => {
-    toggle(isOpen || index === activeIndex)
-  }, [activeIndex, isOpen])
-
-  const classNames = [
+  const thisProps = {
     className,
-    isOpenState ? 'open' : 'closed',
-    disabled ? 'disabled' : ''
-  ].join(' ')
+    'aria-expanded': (controlled && controlled) || isOpen
+  }
+
+  if (disabled) {
+    thisProps['aria-disabled'] = true
+  }
 
   return (
-    <div
-      onClick={() => !disabled && handleActive(index)}
-      className={classNames}
-      style={{ pointerEvents: disabled && 'none' }}
-    >
+    <div {...thisProps} onClick={() => !disabled && handleActive(index)}>
       {children}
     </div>
   )

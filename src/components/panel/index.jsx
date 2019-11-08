@@ -1,40 +1,25 @@
 import * as React from 'react'
 
-import { Ctx } from '../collapser'
-
 export const Panel = (props) => {
-  const { activeIndex, animated, openAll, isOpenContext } = React.useContext(
-    Ctx
-  )
-
   const {
-    className = 'collapser-panel',
     children,
-    index,
-    isOpen = isOpenContext
+    isOpen,
+    controlled,
+    animated,
+    className = 'collapse-panel'
   } = props
 
-  const [isOpenState, toggle] = React.useState(isOpen)
-
-  React.useEffect(() => {
-    openAll && toggle(openAll)
-  }, [openAll])
-
-  React.useEffect(() => {
-    toggle(isOpen || index === activeIndex)
-  }, [activeIndex, isOpen])
-
-  const classNames = [className, isOpenState ? 'open' : 'closed'].join(' ')
+  const thisProps = {
+    className,
+    'aria-expanded': (controlled && controlled) || isOpen
+  }
 
   return (
     <div
-      className={classNames}
+      {...thisProps}
       style={{
-        transition: animated
-          ? 'all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)'
-          : 0,
-        overflow: isOpenState ? 'auto' : 'hidden',
-        maxHeight: isOpenState ? 'initial' : 0
+        transition: animated ? 'all 0.3s' : 0,
+        maxHeight: (controlled && controlled) || isOpen ? 'initial' : 0
       }}
     >
       {children}

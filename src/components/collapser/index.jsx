@@ -1,27 +1,26 @@
 import * as React from 'react'
 
-export const Ctx = React.createContext()
-
 export const Collapser = (props) => {
+  // eslint-disable-next-line react/destructuring-assignment
+  const isNumber = typeof props.alwaysOpen === 'number'
+
   const {
     children,
-    className = 'collapser',
+    className = 'collapse',
     alwaysOpen = false,
-    index = typeof alwaysOpen === 'number' ? alwaysOpen : alwaysOpen ? 0 : -1,
+    index = isNumber ? alwaysOpen : alwaysOpen ? 0 : -1,
+    controlled,
+    revealed,
     animated = false,
-    openAll = false,
-    isOpen = '',
     disabled = false
   } = props
 
   const [activeIndex, setActiveIndex] = React.useState(index)
-
-  const classNames = [className].join(' ')
+  const [isRevealed, revealAll] = React.useState(false)
 
   const handleActive = (clickedIndex) => {
-    if (isOpen !== '' || disabled) return false
-
-    const isNumber = typeof alwaysOpen === 'number'
+    if (controlled || disabled) return false
+    revealed && revealAll(false)
     const isEqual = clickedIndex === activeIndex
 
     if (alwaysOpen) {
@@ -31,36 +30,45 @@ export const Collapser = (props) => {
     }
   }
 
-  const cloneChildren = (clone, key, childKey, isFragment = false) => {
-    return React.cloneElement(clone, {
-      key: childKey ? key + childKey : key,
-      index: key % (isFragment ? 1 : 2) ? key - 1 : key
-    })
+  React.useEffect(() => {
+    revealed && revealAll(true)
+  }, [revealed])
+
+  const handleState = (child, key) => {
+    const childName = child.type.displayName
+    const trigger = childName === 'Trigger' || childName === 'Styled(Trigger)'
+    const panel = childName === 'Panel' || childName === 'Styled(Panel)'
+
+    const childKey = trigger ? key : key - 1
+
+    const state = {
+      key,
+      index: childKey,
+      isOpen:
+        (isRevealed && isRevealed) || controlled || childKey === activeIndex
+    }
+
+    if (trigger) {
+      state.handleActive = handleActive
+    }
+
+    if (panel) {
+      state.animated = animated
+    }
+
+    return React.cloneElement(child, state)
   }
 
   return (
-    <div className={classNames}>
-      <Ctx.Provider
-        value={{
-          handleActive,
-          setActiveIndex,
-          activeIndex,
-          animated,
-          openAll,
-          isOpenContext: isOpen
-        }}
-      >
-        {children.map((child, key) => {
-          if (child.type) {
-            return child.type.toString() === 'Symbol(react.fragment)'
-              ? child.props.children.map((item, childKey) =>
-                  cloneChildren(item, key, childKey, true)
-                )
-              : cloneChildren(child, key)
-          }
-          return child
-        })}
-      </Ctx.Provider>
+    <div className={className}>
+      {children.map((child, key) => {
+        if (child.type.toString() === 'Symbol(react.fragment)') {
+          return child.props.children.map((item, childKey) =>
+            handleState(item, childKey + key)
+          )
+        }
+        return handleState(child, key)
+      })}
     </div>
   )
 }
