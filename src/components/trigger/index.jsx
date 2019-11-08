@@ -1,10 +1,9 @@
 import * as React from 'react'
-import { Ctx } from '../collapser'
 
 export const Trigger = (props) => {
-  const { isOpen, handleActive } = React.useContext(Ctx)
-
   const {
+    isOpen,
+    handleActive,
     className = 'collapse-trigger',
     children,
     index,

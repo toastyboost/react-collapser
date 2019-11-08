@@ -1,11 +1,13 @@
 import * as React from 'react'
 
-import { Ctx } from '../collapser'
-
 export const Panel = (props) => {
-  const { isOpen } = React.useContext(Ctx)
-
-  const { className = 'collapse-panel', children, controlled, animated } = props
+  const {
+    className = 'collapse-panel',
+    children,
+    controlled,
+    animated,
+    isOpen
+  } = props
 
   return (
     <div

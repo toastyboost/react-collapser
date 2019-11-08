@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-export const Ctx = React.createContext()
-
 export const Collapser = (props) => {
   const {
     children,
@@ -18,7 +16,8 @@ export const Collapser = (props) => {
   const [isRevealed, revealAll] = React.useState(false)
 
   const handleActive = (clickedIndex) => {
-    if (controlled || disabled) return false
+    if ((controlled && controlled) || disabled) return false
+
     revealed && revealAll(false)
     const isEqual = clickedIndex === activeIndex
 
@@ -40,36 +39,38 @@ export const Collapser = (props) => {
   }, [revealed])
 
   const handleState = (child, key) => {
-    const childName = child.type.displayName
+    if (typeof child === 'string') return child
+
+    const childName = child.type.name
     const trigger = childName === 'Trigger' || childName === 'Styled(Trigger)'
 
-    const childKey = trigger ? key : key - 1
+    const state = {
+      handleActive,
+      key,
+      index: key,
+      animated,
+      isOpen:
+        (isRevealed && isRevealed) ||
+        (controlled && controlled) ||
+        (trigger ? key : key - 1) === activeIndex
+    }
 
-    return (
-      <Ctx.Provider
-        value={{
-          handleActive,
-          isOpen:
-            (isRevealed && isRevealed) || controlled || childKey === activeIndex
-        }}
-      >
-        {React.cloneElement(child, {
-          key: childKey,
-          index: childKey,
-          animated
-        })}
-      </Ctx.Provider>
-    )
+    return React.cloneElement(child, state)
   }
 
   return (
     <div className={className}>
       {children.map((child, key) => {
+        if (child.type.toString() === 'Symbol(react.element)') {
+          return handleState(child, key)
+        }
+
         if (child.type.toString() === 'Symbol(react.fragment)') {
           return child.props.children.map((item, childKey) =>
             handleState(item, childKey + key)
           )
         }
+
         return handleState(child, key)
       })}
     </div>

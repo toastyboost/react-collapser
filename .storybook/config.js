@@ -2,7 +2,6 @@ import { configure, addDecorator, addParameters } from '@storybook/react'
 
 import { configureActions } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs/react'
-import { withA11y } from '@storybook/addon-a11y'
 import { withConsole } from '@storybook/addon-console'
 import { withInfo } from '@storybook/addon-info'
 import { themes } from '@storybook/theming'
@@ -32,8 +31,6 @@ addDecorator(
 )
 
 addDecorator(withKnobs)
-addDecorator(withA11y)
-
 addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 configure(require.context('../src/stories', true, /\.stories\.jsx$/), module)
