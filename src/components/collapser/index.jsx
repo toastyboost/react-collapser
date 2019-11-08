@@ -1,16 +1,15 @@
 import * as React from 'react'
 
-export const Collapser = (props) => {
-  // eslint-disable-next-line react/destructuring-assignment
-  const isNumber = typeof props.alwaysOpen === 'number'
+export const Ctx = React.createContext()
 
+export const Collapser = (props) => {
   const {
     children,
     className = 'collapse',
     alwaysOpen = false,
-    index = isNumber ? alwaysOpen : alwaysOpen ? 0 : -1,
-    controlled,
-    revealed,
+    index = typeof alwaysOpen === 'number' ? alwaysOpen : alwaysOpen ? 0 : -1,
+    controlled = false,
+    revealed = false,
     animated = false,
     disabled = false
   } = props
@@ -24,7 +23,13 @@ export const Collapser = (props) => {
     const isEqual = clickedIndex === activeIndex
 
     if (alwaysOpen) {
-      setActiveIndex(isEqual ? (isNumber ? alwaysOpen : 0) : clickedIndex)
+      setActiveIndex(
+        isEqual
+          ? typeof alwaysOpen === 'number'
+            ? alwaysOpen
+            : 0
+          : clickedIndex
+      )
     } else {
       setActiveIndex(isEqual ? -1 : clickedIndex)
     }
@@ -37,26 +42,24 @@ export const Collapser = (props) => {
   const handleState = (child, key) => {
     const childName = child.type.displayName
     const trigger = childName === 'Trigger' || childName === 'Styled(Trigger)'
-    const panel = childName === 'Panel' || childName === 'Styled(Panel)'
 
     const childKey = trigger ? key : key - 1
 
-    const state = {
-      key,
-      index: childKey,
-      isOpen:
-        (isRevealed && isRevealed) || controlled || childKey === activeIndex
-    }
-
-    if (trigger) {
-      state.handleActive = handleActive
-    }
-
-    if (panel) {
-      state.animated = animated
-    }
-
-    return React.cloneElement(child, state)
+    return (
+      <Ctx.Provider
+        value={{
+          handleActive,
+          isOpen:
+            (isRevealed && isRevealed) || controlled || childKey === activeIndex
+        }}
+      >
+        {React.cloneElement(child, {
+          key: childKey,
+          index: childKey,
+          animated
+        })}
+      </Ctx.Provider>
+    )
   }
 
   return (

@@ -67,12 +67,16 @@ Most of their features are not in demand. Made on classes.
 
 ### Trigger / Panel
 
-| Property   | Description                                                                                                                                                    | Type    | Default |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| controlled | Panel or Trigger component becomes fully controlled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        | Boolean | false   |
-| disabled   | Disable Trigger and linked to this Panel component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
+| Property   | Description                                                                                                                                              | Type    | Default |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
+| controlled | Panel or Trigger component becomes fully controlled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                              | Boolean | false   |
+| disabled   | Disable Trigger and linked to this Panel component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
+
+&nbsp;
 
 ---
+
+&nbsp;
 
 ## Development
 

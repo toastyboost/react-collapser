@@ -1,22 +1,16 @@
 import * as React from 'react'
 
-export const Panel = (props) => {
-  const {
-    children,
-    isOpen,
-    controlled,
-    animated,
-    className = 'collapse-panel'
-  } = props
+import { Ctx } from '../collapser'
 
-  const thisProps = {
-    className,
-    'aria-expanded': (controlled && controlled) || isOpen
-  }
+export const Panel = (props) => {
+  const { isOpen } = React.useContext(Ctx)
+
+  const { className = 'collapse-panel', children, controlled, animated } = props
 
   return (
     <div
-      {...thisProps}
+      className={className}
+      aria-expanded={(controlled && controlled) || isOpen}
       style={{
         transition: animated ? 'all 0.3s' : 0,
         maxHeight: (controlled && controlled) || isOpen ? 'initial' : 0

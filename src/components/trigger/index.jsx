@@ -1,27 +1,30 @@
 import * as React from 'react'
+import { Ctx } from '../collapser'
 
 export const Trigger = (props) => {
+  const { isOpen, handleActive } = React.useContext(Ctx)
+
   const {
-    handleActive,
     className = 'collapse-trigger',
     children,
     index,
-    isOpen,
     disabled = false,
-    controlled
+    controlled = false
   } = props
 
-  const thisProps = {
-    className,
-    'aria-expanded': (controlled && controlled) || isOpen
-  }
+  const thisProps = {}
 
   if (disabled) {
     thisProps['aria-disabled'] = true
   }
 
   return (
-    <div {...thisProps} onClick={() => !disabled && handleActive(index)}>
+    <div
+      {...thisProps}
+      className={className}
+      aria-expanded={(controlled && controlled) || isOpen}
+      onClick={() => !disabled && handleActive(index)}
+    >
       {children}
     </div>
   )
