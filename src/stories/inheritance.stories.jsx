@@ -28,12 +28,12 @@ export const unlimitedChilds = () => {
                   <React.Fragment key={catKey}>
                     <Trigger>{catName}</Trigger>
                     <Panel>{catText}</Panel>
+                    <Trigger>{catName}</Trigger>
+                    <Panel>{catText}</Panel>
                   </React.Fragment>
                 ))}
               </Collapser>
             </Panel>
-          </Collapser>
-          <Collapser>
             <Trigger>American Bobtail Cat Breed</Trigger>
             <Panel>
               Confident and friendly, the American Bobtail is a highly
