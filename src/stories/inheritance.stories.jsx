@@ -21,6 +21,9 @@ export const unlimitedChilds = () => {
         <Panel>
           Here more details:
           <Collapser>
+            A dog is a type of domesticated animal. Known for its loyalty and
+            faithfulness, it can be found as a welcome guest in many households
+            across the world.
             <Trigger>Abyssinian Cat</Trigger>
             <Panel>
               <Collapser>
@@ -28,11 +31,16 @@ export const unlimitedChilds = () => {
                   <React.Fragment key={catKey}>
                     <Trigger>{catName}</Trigger>
                     <Panel>{catText}</Panel>
-                    <Trigger>{catName}</Trigger>
-                    <Panel>{catText}</Panel>
                   </React.Fragment>
                 ))}
               </Collapser>
+            </Panel>
+            <Trigger>American Bobtail Cat Breed</Trigger>
+            <Panel>
+              Confident and friendly, the American Bobtail is a highly
+              intelligent breed with a clownlike personality. Looking much like
+              a bobtailed wildcat, this rare and athletic breed can be taught to
+              walk on a leash.
             </Panel>
             <Trigger>American Bobtail Cat Breed</Trigger>
             <Panel>
@@ -55,20 +63,31 @@ export const dataMapping = () => {
       description="Build collapser structure with arrays of data"
     >
       <Collapser>
+        Confident and friendly, the American Bobtail is a highly intelligent
+        breed with a clownlike personality. Looking much like a bobtailed
+        wildcat, this rare and athletic breed can be taught to walk on a leash.
         {dogs.map(({ dogName, dogText }, dogKey) => (
           <React.Fragment key={dogKey}>
             <Trigger>{dogName}</Trigger>
-            <Panel>
-              {dogText}
-              <Collapser>
-                {cats.map(({ catName, catText }, catKey) => (
-                  <React.Fragment key={catKey}>
-                    <Trigger>{catName}</Trigger>
-                    <Panel>{catText}</Panel>
-                  </React.Fragment>
-                ))}
-              </Collapser>
-            </Panel>
+            <Panel>{dogText}</Panel>
+          </React.Fragment>
+        ))}
+      </Collapser>
+    </Ui>
+  )
+}
+
+export const otherChilds = () => {
+  return (
+    <Ui
+      title="Data Mapping"
+      description="Build collapser structure with arrays of data"
+    >
+      <Collapser>
+        {dogs.map(({ dogName, dogText }, dogKey) => (
+          <React.Fragment key={dogKey}>
+            <Trigger>{dogName}</Trigger>
+            <Panel>{dogText}</Panel>
           </React.Fragment>
         ))}
       </Collapser>

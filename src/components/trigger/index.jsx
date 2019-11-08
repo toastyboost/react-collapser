@@ -2,26 +2,28 @@ import * as React from 'react'
 
 export const Trigger = (props) => {
   const {
+    isOpen,
     handleActive,
     className = 'collapse-trigger',
     children,
     index,
-    isOpen,
     disabled = false,
-    controlled
+    controlled = false
   } = props
 
-  const thisProps = {
-    className,
-    'aria-expanded': (controlled && controlled) || isOpen
-  }
+  const thisProps = {}
 
   if (disabled) {
     thisProps['aria-disabled'] = true
   }
 
   return (
-    <div {...thisProps} onClick={() => !disabled && handleActive(index)}>
+    <div
+      {...thisProps}
+      className={className}
+      aria-expanded={(controlled && controlled) || isOpen}
+      onClick={() => !disabled && handleActive(index)}
+    >
       {children}
     </div>
   )

@@ -1,7 +1,7 @@
 # 🏄 React-Collapser
 
 Easy, fast and lightweight React collapse component for your `<App />`  
-Fully controlled, zero dependencies, works out of the box, has advanced features.
+Fully controlled, zero dependencies, works out of the box, has advanced features.  
 Made with functional components, hooks and latest React.
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/react-collapser?color=success&label=minified) [![Build Status](https://travis-ci.org/toastyboost/react-collapser.svg?branch=master)](https://travis-ci.org/toastyboost/react-collapser) ![David](https://img.shields.io/david/toastyboost/react-collapser?label=dependencies) &nbsp; [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://toastyboost.github.io/react-collapser)
@@ -67,12 +67,16 @@ Most of their features are not in demand. Made on classes.
 
 ### Trigger / Panel
 
-| Property   | Description                                                                                                                                                    | Type    | Default |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| controlled | Panel or Trigger component becomes fully controlled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        | Boolean | false   |
-| disabled   | Disable Trigger and linked to this Panel component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
+| Property   | Description                                                                                                                                        | Type    | Default |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
+| controlled | Panel or Trigger component becomes fully controlled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                              | Boolean | false   |
+| disabled   | Disable Trigger and linked to this Panel component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
+
+&nbsp;
 
 ---
+
+&nbsp;
 
 ## Development
 
