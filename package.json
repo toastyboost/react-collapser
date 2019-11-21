@@ -1,12 +1,10 @@
 {
   "name": "react-collapser",
-  "description": "🏄 fully controlled • zero dependencies • works out of the box • other features",
-  "version": "1.4.2",
+  "description": "🏄‍♂️ • fully controlled • zero dependencies • works out of the box • other features",
+  "version": "1.5.2",
   "main": "./dist/index",
   "module": "./dist/common",
   "author": "https://github.com/toastyboost",
-  "repository": "https://github.com/toastyboost/react-collapser",
-  "homepage": "https://toastyboost.github.io/react-collapser",
   "license": "MIT",
   "files": [
     "dist"
@@ -20,13 +18,13 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.6.3",
     "@rollup/plugin-alias": "^2.2.0",
-    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-actions": "^5.2.6",
     "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-info": "^5.2.5",
-    "@storybook/addon-knobs": "^5.2.5",
-    "@storybook/addon-storysource": "^5.2.5",
-    "@storybook/react": "^5.2.5",
-    "antd": "^3.24.3",
+    "@storybook/addon-info": "^5.2.6",
+    "@storybook/addon-knobs": "^5.2.6",
+    "@storybook/addon-storysource": "^5.2.6",
+    "@storybook/react": "^5.2.6",
+    "antd": "^3.25.2",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "eslint": "^6.6.0",
@@ -37,12 +35,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
-    "prettier": "^1.18.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "rollup": "^1.26.2",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rollup": "^1.27.3",
     "rollup-plugin-babel": "^4.2.0",
-    "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -51,7 +49,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 7000",
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "build-story": "rm -rf storybook-static && build-storybook -c .storybook"
   },
   "keywords": [
@@ -65,5 +63,13 @@
   ],
   "bugs": {
     "url": "https://github.com/toastyboost/react-collapser/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toastyboost/react-collapser.git"
+  },
+  "homepage": "https://toastyboost.github.io/react-collapser",
+  "dependencies": {
+    "rollup-plugin-postcss": "^2.0.3"
   }
 }

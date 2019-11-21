@@ -1,19 +1,19 @@
 import * as React from 'react'
 // eslint-disable-next-line import/no-extraneous-dependencies
+import { boolean } from '@storybook/addon-knobs'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Switch, Divider } from 'antd'
 
 import { Collapser, Trigger, Panel } from '@/components'
 import { Ui, dogs, cats } from '@/libs'
+import { Container } from '@/styles'
 
 export default { title: 'Properties' }
 
 export const alwaysOpen = () => {
   return (
-    <Ui
-      title="Always opened panels"
-      description="Collapser have atleast one opened panel, by default with 0 index"
-    >
-      <Collapser alwaysOpen>
+    <Container>
+      <Collapser alwaysOpen={boolean('1st panel is always open', true)}>
         {dogs.map(({ dogName, dogText }, key) => (
           <React.Fragment key={key}>
             <Trigger>{dogName}</Trigger>
@@ -21,7 +21,7 @@ export const alwaysOpen = () => {
           </React.Fragment>
         ))}
       </Collapser>
-    </Ui>
+    </Container>
   )
 }
 
@@ -57,9 +57,12 @@ export const revealAll = () => {
   const [isAllOpen, toggle] = React.useState(false)
 
   return (
-    <Ui title="Open all" description="You could reveal all collapser childrens">
+    <Ui
+      title="Reveal panels"
+      description="You could reveal all collapser childrens"
+    >
       <Switch onClick={() => toggle(!isAllOpen)} defaultChecked={isAllOpen} />
-      Controlled
+      Reveal all
       <Collapser revealed={isAllOpen}>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
@@ -178,6 +181,27 @@ export const animated = () => {
       description="You could use collapser animation out of box"
     >
       <Collapser animated>
+        {dogs.map(({ dogName, dogText }, key) => (
+          <React.Fragment key={key}>
+            <Trigger>{dogName}</Trigger>
+            <Panel>{dogText}</Panel>
+          </React.Fragment>
+        ))}
+      </Collapser>
+    </Ui>
+  )
+}
+
+export const onChange = () => {
+  const handleChange = (state) => {
+    console.log('state', state)
+  }
+  return (
+    <Ui
+      title="Handle onChange"
+      description="onChange event return current state of collpser"
+    >
+      <Collapser alwaysOpen onChange={handleChange}>
         {dogs.map(({ dogName, dogText }, key) => (
           <React.Fragment key={key}>
             <Trigger>{dogName}</Trigger>

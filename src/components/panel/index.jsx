@@ -1,14 +1,12 @@
 import * as React from 'react'
 
-export const Panel = (props) => {
-  const {
-    className = 'collapse-panel',
-    children,
-    controlled,
-    animated,
-    isOpen
-  } = props
-
+export const Panel = ({
+  className = 'collapse-panel',
+  children,
+  controlled,
+  animated,
+  isOpen
+}) => {
   return (
     <div
       className={className}

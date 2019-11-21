@@ -1,4 +1,4 @@
-# 🏄 React-Collapser
+# 🏄‍♂️ React-Collapser
 
 Easy, fast and lightweight React collapse component for your `<App />`  
 Fully controlled, zero dependencies, works out of the box, has advanced features.  
@@ -56,14 +56,15 @@ Most of their features are not in demand. Made on classes.
 
 ### Collapser
 
-| Property   | Description                                                                              | Type    | Default |
-| ---------- | ---------------------------------------------------------------------------------------- | ------- | ------- |
-| alwaysOpen | Collapser have one always opened panel, 0 by default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false   |
-| alwaysOpen | Collapser have one always opened panel, prop number                                      | Number  | 0       |
-| reveal     | Reveal all nested panels and triggers                                                    | Boolean | false   |
-| controlled | Collpaser becomes fully controlled by this prop                                          | Boolean | false   |
-| animated   | Initiate default animation                                                               | Boolean | false   |
-| disabled   | Disable whole collapser                                                                  | Boolean | false   |
+| Property   | Description                                                                              | Type    | Default       |
+| ---------- | ---------------------------------------------------------------------------------------- | ------- | ------------- |
+| alwaysOpen | Collapser have one always opened panel, 0 by default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Boolean | false         |
+| alwaysOpen | Collapser have one always opened panel, prop number                                      | Number  | 0             |
+| reveal     | Reveal all nested panels and triggers                                                    | Boolean | false         |
+| controlled | Collpaser becomes fully controlled by this prop                                          | Boolean | false         |
+| animated   | Initiate default animation                                                               | Boolean | false         |
+| disabled   | Disable whole collapser                                                                  | Boolean | false         |
+| onChange   | Return state of collapser                                                                | Event   | {activeIndex} |
 
 ### Trigger / Panel
 
@@ -100,7 +101,11 @@ All examples on [storybook](https://toastyboost.github.io/react-collapser)
 - [ ] add tests
 - [ ] add typescript
 - [ ] resolve case with childs between trigger and panel
-- [ ] add disable props
 - [ ] link features and story book
 - [ ] add gifs to most important features
 - [ ] add star motivation
+- [ ] add knobs
+- [ ] remove antd
+- [ ] add Docs addon to storybook
+- [ ] add labels in titles to duplicate states
+- [ ] add links from props table to storybook

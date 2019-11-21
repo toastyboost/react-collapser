@@ -1,8 +1,8 @@
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
-import cleaner from 'rollup-plugin-cleaner'
 import alias from '@rollup/plugin-alias'
+import postcss from 'rollup-plugin-postcss'
 
 import { eslint } from 'rollup-plugin-eslint'
 import { terser } from 'rollup-plugin-terser'
@@ -30,8 +30,11 @@ export default {
     ...Object.keys(pkg.peerDependencies || {})
   ],
   plugins: [
-    cleaner({
-      targets: ['dist']
+    postcss({
+      autoModules: true,
+      namedExports: true,
+      modules: true,
+      extensions: ['.css', '.scss']
     }),
     alias({
       entries: {

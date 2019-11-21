@@ -1,19 +1,28 @@
 import * as React from 'react'
 
-export const Collapser = (props) => {
-  const {
-    children,
-    className = 'collapse',
-    alwaysOpen = false,
-    index = typeof alwaysOpen === 'number' ? alwaysOpen : alwaysOpen ? 0 : -1,
-    controlled = false,
-    revealed = false,
-    animated = false,
-    disabled = false
-  } = props
-
+export const Collapser = ({
+  children,
+  className = 'collapse',
+  alwaysOpen = false,
+  index = typeof alwaysOpen === 'number' ? alwaysOpen : alwaysOpen ? 0 : -1,
+  controlled = false,
+  revealed = false,
+  animated = false,
+  disabled = false,
+  onChange = () => null
+}) => {
   const [activeIndex, setActiveIndex] = React.useState(index)
   const [isRevealed, revealAll] = React.useState(false)
+
+  React.useEffect(() => {
+    revealed && revealAll(true)
+  }, [revealed])
+
+  React.useEffect(() => {
+    onChange({
+      activeIndex
+    })
+  }, [activeIndex])
 
   const handleActive = (clickedIndex) => {
     if ((controlled && controlled) || disabled) return false
@@ -33,10 +42,6 @@ export const Collapser = (props) => {
       setActiveIndex(isEqual ? -1 : clickedIndex)
     }
   }
-
-  React.useEffect(() => {
-    revealed && revealAll(true)
-  }, [revealed])
 
   const handleState = (child, key) => {
     if (typeof child === 'string') return child

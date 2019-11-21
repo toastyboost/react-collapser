@@ -1,21 +1,17 @@
 import * as React from 'react'
 
-export const Trigger = (props) => {
-  const {
-    isOpen,
-    handleActive,
-    className = 'collapse-trigger',
-    children,
-    index,
-    disabled = false,
-    controlled = false
-  } = props
-
+export const Trigger = ({
+  isOpen,
+  handleActive,
+  className = 'collapse-trigger',
+  children,
+  index,
+  disabled = false,
+  controlled = false
+}) => {
   const thisProps = {}
 
-  if (disabled) {
-    thisProps['aria-disabled'] = true
-  }
+  if (disabled) thisProps['aria-disabled'] = true
 
   return (
     <div
