@@ -7,14 +7,20 @@ export const Panel = ({
   animated,
   isOpen
 }) => {
+  const styles = {
+    maxHeight: (controlled && controlled) || isOpen ? 'initial' : 0,
+    overflow: isOpen ? 'visible' : 'hidden'
+  }
+
+  if (animated) {
+    styles.transition = 'all 0.3s'
+  }
+
   return (
     <div
       className={className}
       aria-expanded={(controlled && controlled) || isOpen}
-      style={{
-        transition: animated ? 'all 0.3s' : 0,
-        maxHeight: (controlled && controlled) || isOpen ? 'initial' : 0
-      }}
+      style={styles}
     >
       {children}
     </div>

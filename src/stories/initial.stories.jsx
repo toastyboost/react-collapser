@@ -1,15 +1,12 @@
 import * as React from 'react'
 import { Collapser, Trigger, Panel } from '@/components'
-import { Ui } from '@/libs'
+import { Container } from '@/styles'
 
 export default { title: 'Collapser' }
 
 export const Tab = () => {
   return (
-    <Ui
-      title="Tab out of box"
-      description="Without any settings and multiple childrens collapser works like a tab"
-    >
+    <Container>
       <Collapser>
         <Trigger>About dogs</Trigger>
         <Panel>
@@ -18,16 +15,13 @@ export const Tab = () => {
           across the world.
         </Panel>
       </Collapser>
-    </Ui>
+    </Container>
   )
 }
 
 export const Accordion = () => {
   return (
-    <Ui
-      title="Accordion out of box"
-      description="Without any settings and multiple childrens collapser works like a tab"
-    >
+    <Container>
       <Collapser>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
@@ -47,6 +41,6 @@ export const Accordion = () => {
           love to investigate and will leave no nook or cranny unexplored.
         </Panel>
       </Collapser>
-    </Ui>
+    </Container>
   )
 }

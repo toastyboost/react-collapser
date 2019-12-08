@@ -5,9 +5,7 @@ import { Ui, dogs, cats } from '@/libs'
 export default { title: 'Inheritance' }
 
 export const unlimitedChilds = () => {
-  const handleChange = (state) => {
-    console.log('props', state)
-  }
+  const handleChange = () => {}
   return (
     <Ui
       title="Deep tree"
@@ -68,6 +66,26 @@ export const dataMapping = () => {
             <Panel>{dogText}</Panel>
           </React.Fragment>
         ))}
+      </Collapser>
+    </Ui>
+  )
+}
+
+export const massMapping = () => {
+  return (
+    <Ui
+      title="Data Mapping"
+      description="Build collapser structure with arrays of data"
+    >
+      <Collapser>
+        {[...dogs, ...dogs, ...dogs, ...dogs].map(
+          ({ dogName, dogText }, dogKey) => (
+            <React.Fragment key={dogKey}>
+              <Trigger>{dogName}</Trigger>
+              <Panel>{dogText}</Panel>
+            </React.Fragment>
+          )
+        )}
       </Collapser>
     </Ui>
   )

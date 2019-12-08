@@ -1,6 +1,6 @@
 import * as React from 'react'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { boolean } from '@storybook/addon-knobs'
+import { boolean, number } from '@storybook/addon-knobs'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Switch, Divider } from 'antd'
 
@@ -13,7 +13,7 @@ export default { title: 'Properties' }
 export const alwaysOpen = () => {
   return (
     <Container>
-      <Collapser alwaysOpen={boolean('1st panel is always open', true)}>
+      <Collapser alwaysOpen={boolean('1st panel is always open:', true)}>
         {dogs.map(({ dogName, dogText }, key) => (
           <React.Fragment key={key}>
             <Trigger>{dogName}</Trigger>
@@ -27,11 +27,10 @@ export const alwaysOpen = () => {
 
 export const alwaysOpenWithDefault = () => {
   return (
-    <Ui
-      title="Always open with default index"
-      description="You could use alwaysOpen feature and choose which panel will be opened by default"
-    >
-      <Collapser alwaysOpen={1}>
+    <Container>
+      <Collapser
+        alwaysOpen={number('Collapser child which will always be open:', 3)}
+      >
         {dogs.map(({ dogName, dogText }, dogKey) => (
           <React.Fragment key={dogKey}>
             <Trigger>{dogName}</Trigger>
@@ -49,21 +48,14 @@ export const alwaysOpenWithDefault = () => {
           </React.Fragment>
         ))}
       </Collapser>
-    </Ui>
+    </Container>
   )
 }
 
 export const revealAll = () => {
-  const [isAllOpen, toggle] = React.useState(false)
-
   return (
-    <Ui
-      title="Reveal panels"
-      description="You could reveal all collapser childrens"
-    >
-      <Switch onClick={() => toggle(!isAllOpen)} defaultChecked={isAllOpen} />
-      Reveal all
-      <Collapser revealed={isAllOpen}>
+    <Container>
+      <Collapser revealed={boolean('Reveal all panels:', false)}>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
           Abyssinians are highly intelligent and intensely inquisitive. They
@@ -82,21 +74,14 @@ export const revealAll = () => {
           love to investigate and will leave no nook or cranny unexplored.
         </Panel>
       </Collapser>
-    </Ui>
+    </Container>
   )
 }
 
 export const controlledCollapser = () => {
-  const [isOpen, controlledToggle] = React.useState(false)
-
   return (
-    <Ui
-      title="Controlled collapser"
-      description="You could controll all collapser childs"
-    >
-      <Switch onClick={() => controlledToggle(!isOpen)} /> Controlled
-      <Divider />
-      <Collapser controlled={isOpen}>
+    <Container>
+      <Collapser controlled={boolean('Toggle all panels at collapser:', false)}>
         <Trigger>Abyssinian Cat</Trigger>
         <Panel>
           Abyssinians are highly intelligent and intensely inquisitive. They
@@ -110,7 +95,7 @@ export const controlledCollapser = () => {
           leash.
         </Panel>
       </Collapser>
-    </Ui>
+    </Container>
   )
 }
 

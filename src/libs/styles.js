@@ -11,12 +11,19 @@ export const StyledCollapser = styled(Collapser)`
   color: #fff;
   overflow: hidden;
 `
+
 export const StyledTrigger = styled(Trigger)`
   background-color: #845ec2;
   padding: 12px 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
   color: #fff;
+
+  &[aria-expanded='true'] {
+    &:before {
+      content: '[+] ';
+    }
+  }
 `
 export const StyledPanel = styled(Panel)`
   background-color: #ff6f91;

@@ -39,3 +39,16 @@ export const externalStyles = () => {
     </Ui>
   )
 }
+
+export const withoutStyles = () => {
+  return (
+    <Collapser>
+      {dogs.map(({ dogName, dogText }, key) => (
+        <React.Fragment key={key}>
+          <Trigger>{dogName}</Trigger>
+          <Panel>{dogText}</Panel>
+        </React.Fragment>
+      ))}
+    </Collapser>
+  )
+}

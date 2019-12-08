@@ -29,7 +29,6 @@
     "function-paren-newline": "off",
     "object-curly-newline": "off",
     "no-nested-ternary": "off",
-    "no-console": "off",
     "react/no-array-index-key": "off",
     "no-confusing-arrow": "off",
     "indent": "off",

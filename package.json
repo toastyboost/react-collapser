@@ -1,7 +1,7 @@
 {
   "name": "react-collapser",
   "description": "🏄‍♂️ • fully controlled • zero dependencies • works out of the box • other features",
-  "version": "1.5.2",
+  "version": "1.5.10",
   "main": "./dist/index",
   "module": "./dist/common",
   "author": "https://github.com/toastyboost",
@@ -35,7 +35,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
-    "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -50,7 +49,7 @@
   "scripts": {
     "start": "start-storybook -p 7000",
     "build": "rm -rf dist && rollup -c",
-    "build-story": "rm -rf storybook-static && build-storybook -c .storybook"
+    "story": "rm -rf storybook-static && build-storybook -c .storybook"
   },
   "keywords": [
     "react",
@@ -68,8 +67,5 @@
     "type": "git",
     "url": "git+https://github.com/toastyboost/react-collapser.git"
   },
-  "homepage": "https://toastyboost.github.io/react-collapser",
-  "dependencies": {
-    "rollup-plugin-postcss": "^2.0.3"
-  }
+  "homepage": "https://toastyboost.github.io/react-collapser"
 }

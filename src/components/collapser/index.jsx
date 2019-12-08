@@ -1,16 +1,25 @@
 import * as React from 'react'
 
-export const Collapser = ({
-  children,
-  className = 'collapse',
-  alwaysOpen = false,
-  index = typeof alwaysOpen === 'number' ? alwaysOpen : alwaysOpen ? 0 : -1,
-  controlled = false,
-  revealed = false,
-  animated = false,
-  disabled = false,
-  onChange = () => null
-}) => {
+export const Collapser = (props) => {
+  const {
+    children,
+    className = 'collapse',
+    alwaysOpen = false,
+    index = typeof alwaysOpen === 'number'
+      ? alwaysOpen + 1
+      : alwaysOpen
+      ? 0
+      : -1,
+    controlled = false,
+    revealed = false,
+    animated = false,
+    disabled = false,
+    onChange = () => null
+  } = props
+
+  const divProps = { ...props }
+  delete divProps.alwaysOpen
+
   const [activeIndex, setActiveIndex] = React.useState(index)
   const [isRevealed, revealAll] = React.useState(false)
 
@@ -34,7 +43,7 @@ export const Collapser = ({
       setActiveIndex(
         isEqual
           ? typeof alwaysOpen === 'number'
-            ? alwaysOpen
+            ? alwaysOpen + 1
             : 0
           : clickedIndex
       )
@@ -45,35 +54,38 @@ export const Collapser = ({
 
   const handleState = (child, key) => {
     if (typeof child === 'string') return child
+    let isOpen = false
 
-    const childName = child.type.name
-    const trigger = childName === 'Trigger' || childName === 'Styled(Trigger)'
+    if (isRevealed) {
+      isOpen = isRevealed
+    } else if (controlled) {
+      isOpen = controlled
+    } else {
+      isOpen = key % 2 !== 0 ? key === activeIndex + 1 : key === activeIndex
+    }
 
     const state = {
       handleActive,
       key,
       index: key,
       animated,
-      isOpen:
-        (isRevealed && isRevealed) ||
-        (controlled && controlled) ||
-        (trigger ? key : key - 1) === activeIndex
+      isOpen
     }
 
     return React.cloneElement(child, state)
   }
 
   return (
-    <div className={className}>
+    <div {...divProps} className={className}>
       {children.map((child, key) => {
         if (child.type.toString() === 'Symbol(react.element)') {
           return handleState(child, key)
         }
 
         if (child.type.toString() === 'Symbol(react.fragment)') {
-          return child.props.children.map((item, childKey) =>
-            handleState(item, childKey + key)
-          )
+          return child.props.children.map((item, childKey) => {
+            return handleState(item, child.key * 2 + childKey)
+          })
         }
 
         return handleState(child, key)
