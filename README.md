@@ -116,3 +116,4 @@ https://github.com/toastyboost/rollup-boilerplate
 - [ ] bug with 0 always open child
 - [ ] add github actions
 - [ ] add deploy storybook
+- [ ] add to npm
