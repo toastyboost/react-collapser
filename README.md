@@ -115,3 +115,4 @@ https://github.com/toastyboost/rollup-boilerplate
 - [ ] tab option to ignore click on same tab
 - [ ] bug with 0 always open child
 - [ ] add github actions
+- [ ] add deploy storybook
