@@ -114,3 +114,4 @@ https://github.com/toastyboost/rollup-boilerplate
 - [ ] auto copy styles to dist while build
 - [ ] tab option to ignore click on same tab
 - [ ] bug with 0 always open child
+- [ ] add github actions
